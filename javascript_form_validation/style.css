@@ -67,6 +67,36 @@ label {
   color: #374151;
 }
 
+/* Wraps password input + toggle button */
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding-right: 62px; /* leave room for the Show/Hide button */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-family: inherit;
+  font-weight: 700;
+  color: #6b7280;
+  padding: 4px 2px;
+  transition: color 0.15s ease;
+}
+
+.toggle-password:hover {
+  color: #4f46e5;
+}
+
 input {
   padding: 10px 14px;
   border: 2px solid #d1d5db;

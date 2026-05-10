@@ -5,8 +5,10 @@
 
 function validateFullName(name) {
   if (!name.trim()) return 'Full name is required.';
+  if (!/^[a-zA-Z\s'\-]+$/.test(name.trim())) return 'Name must contain letters only (no numbers or special characters).';
   const words = name.trim().split(/\s+/);
   if (words.length < 2) return 'Please enter at least a first and last name.';
+  if (words.some(function (w) { return w.length < 2; })) return 'Each part of your name must be at least 2 characters long.';
   return '';
 }
 
@@ -39,6 +41,24 @@ function validateAge(age) {
   if (isNaN(n) || n < 18) return 'You must be 18 or older to register.';
   return '';
 }
+
+
+// ============================================================
+// PASSWORD VISIBILITY TOGGLE
+// ============================================================
+
+document.querySelectorAll('.toggle-password').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var input = document.getElementById(this.dataset.target);
+    if (input.type === 'password') {
+      input.type = 'text';
+      this.textContent = 'Hide';
+    } else {
+      input.type = 'password';
+      this.textContent = 'Show';
+    }
+  });
+});
 
 
 // ============================================================
