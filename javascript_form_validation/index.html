@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>User Registration</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ===================== PAGE HEADING ===================== -->
+    <h1>Create an Account</h1>
+    <p class="subtitle">Fill in the details below to register.</p>
+
+    <!-- ===================== REGISTRATION FORM ===================== -->
+    <form id="registrationForm" novalidate>
+
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          placeholder="e.g. Ada Lovelace"
+          autocomplete="name"
+        />
+        <span class="error-msg" id="fullNameError"></span>
+      </div>
+
+      <!-- Email Address -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="e.g. ada@example.com"
+          autocomplete="email"
+        />
+        <span class="error-msg" id="emailError"></span>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Min. 8 chars, 1 uppercase, 1 number, 1 symbol"
+          autocomplete="new-password"
+        />
+        <span class="error-msg" id="passwordError"></span>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Re-enter your password"
+          autocomplete="new-password"
+        />
+        <span class="error-msg" id="confirmPasswordError"></span>
+      </div>
+
+      <!-- Age -->
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          placeholder="Must be 18 or older"
+          min="0"
+          max="120"
+        />
+        <span class="error-msg" id="ageError"></span>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn-submit">Register</button>
+
+    </form>
+
+    <!-- ===================== SUCCESS MESSAGE ===================== -->
+    <div id="successMsg" class="success-msg hidden">
+      Registration successful! Welcome aboard.
+    </div>
+
+  </div><!-- end .container -->
+
+</body>
+
+</html>
