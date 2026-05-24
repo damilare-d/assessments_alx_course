@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Grade Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- ===================== PAGE HEADING ===================== -->
+    <header class="page-header">
+      <h1>Student Grade Tracker</h1>
+      <p class="subtitle">Add students, track grades, and view the class average.</p>
+    </header>
+
+    <!-- ===================== ADD STUDENT FORM ===================== -->
+    <section class="form-section">
+      <h2>Add a Student</h2>
+      <form id="addStudentForm" novalidate>
+
+        <div class="form-row">
+
+          <!-- Student Name -->
+          <div class="form-group">
+            <label for="studentName">Student Name</label>
+            <input
+              type="text"
+              id="studentName"
+              name="studentName"
+              placeholder="e.g. Amaka Obi"
+              autocomplete="off"
+            />
+            <span class="error-msg" id="nameError"></span>
+          </div>
+
+          <!-- Grade -->
+          <div class="form-group">
+            <label for="studentGrade">Grade (0 – 100)</label>
+            <input
+              type="number"
+              id="studentGrade"
+              name="studentGrade"
+              placeholder="e.g. 85"
+              min="0"
+              max="100"
+            />
+            <span class="error-msg" id="gradeError"></span>
+          </div>
+
+        </div><!-- end .form-row -->
+
+        <button type="submit" class="btn-add">Add Student</button>
+
+      </form>
+    </section>
+
+    <!-- ===================== AVERAGE GRADE CARD ===================== -->
+    <div id="averageCard" class="average-card hidden">
+      <span class="avg-label">Class Average</span>
+      <span id="averageValue" class="avg-value">—</span>
+    </div>
+
+    <!-- ===================== STUDENT TABLE ===================== -->
+    <section class="table-section">
+      <h2>Student List</h2>
+
+      <!-- Empty state (shown when no students are added yet) -->
+      <p id="emptyMsg" class="empty-msg">No students added yet. Use the form above to get started.</p>
+
+      <table id="studentTable" class="hidden">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Grade</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="studentList">
+          <!-- Rows inserted dynamically by script.js -->
+        </tbody>
+      </table>
+
+    </section>
+
+  </div><!-- end .container -->
+</body>
+
+</html>
