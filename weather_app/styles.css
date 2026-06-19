@@ -1,0 +1,439 @@
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+
+/* ============================================================
+   NAVIGATION BAR — navy #1A3C5E (required colour)
+   ============================================================ */
+#navbar {
+  background: #1A3C5E;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.app-title {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.search-group {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  justify-content: flex-end;
+  max-width: 420px;
+}
+
+.search-group input {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background: #ffffff;
+  color: #1a1a2e;
+}
+
+.search-group input:focus {
+  box-shadow: 0 0 0 3px rgba(46, 134, 171, 0.5);
+}
+
+#searchBtn {
+  padding: 10px 22px;
+  background: #2E86AB;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  /* Required: smooth transition on hover */
+  transition: all 0.2s ease;
+}
+
+#searchBtn:hover {
+  background: #1a6b8a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#searchBtn:active {
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+   APP CONTAINER — centres all content
+   ============================================================ */
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 24px 48px;
+}
+
+
+/* ============================================================
+   CONTROLS BAR — history chips + unit toggle (bonus features)
+   ============================================================ */
+#controlsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  min-height: 36px;
+}
+
+#historyBar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.history-chip {
+  padding: 5px 14px;
+  background: #ffffff;
+  border: 1px solid #c7d2e0;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  color: #1A3C5E;
+  transition: all 0.2s ease;
+}
+
+.history-chip:hover {
+  background: #1A3C5E;
+  color: #ffffff;
+  border-color: #1A3C5E;
+}
+
+#unitToggle {
+  padding: 6px 16px;
+  background: #1A3C5E;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#unitToggle:hover {
+  background: #2E86AB;
+}
+
+
+/* ============================================================
+   LOADING STATE — shown while API calls are in progress
+   ============================================================ */
+#loadingMsg {
+  text-align: center;
+  padding: 48px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #1A3C5E;
+}
+
+.loading-spinner {
+  display: inline-block;
+  animation: spin 1.5s linear infinite;
+}
+
+
+/* ============================================================
+   ERROR MESSAGE
+   ============================================================ */
+#errorMsg {
+  background: #fee2e2;
+  border: 2px solid #ef4444;
+  border-radius: 10px;
+  padding: 16px 20px;
+  color: #b91c1c;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+
+/* ============================================================
+   HERO SECTION — teal #2E86AB (required colour)
+   ============================================================ */
+#hero {
+  background: #2E86AB;
+  border-radius: 16px 16px 0 0;
+  padding: 40px 24px 32px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.weather-icon {
+  display: block;
+  font-size: 5rem;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+#hero h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.country-text {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+
+.temperature {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.description {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  text-transform: capitalize;
+}
+
+
+/* ============================================================
+   STATS ROW — 3-column grid, white background
+   ============================================================ */
+#stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #ffffff;
+  border-top: 1px solid #dbe9f4;
+  border-radius: 0 0 16px 16px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card {
+  padding: 20px 16px;
+  text-align: center;
+  border-right: 1px solid #e5e7eb;
+}
+
+.stat-card:last-child {
+  border-right: none;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.78rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1A3C5E;
+}
+
+
+/* ============================================================
+   5-DAY FORECAST — white background
+   ============================================================ */
+#forecast {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+#forecast h3 {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 16px;
+}
+
+#forecastGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.forecast-card {
+  text-align: center;
+  padding: 14px 8px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  /* Required: hover effect on forecast rows */
+  transition: all 0.2s ease;
+}
+
+.forecast-card:hover {
+  background: #e8f4f8;
+  border-color: #2E86AB;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 134, 171, 0.15);
+}
+
+.forecast-day {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: bold;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.forecast-icon {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.forecast-high {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #1A3C5E;
+}
+
+.forecast-low {
+  display: block;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+
+/* ============================================================
+   ANIMATED WEATHER ICONS (bonus)
+   Three keyframe animations for different weather types.
+   ============================================================ */
+@keyframes spin {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1;   }
+  50%       { opacity: 0.5; }
+}
+
+.anim-spin {
+  display: inline-block;
+  animation: spin 8s linear infinite;
+}
+
+.anim-bounce {
+  display: inline-block;
+  animation: bounce 1.2s ease-in-out infinite;
+}
+
+.anim-pulse {
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+.hidden {
+  display: none !important;
+}
+
+
+/* ============================================================
+   RESPONSIVE — screens narrower than 480px (required)
+   ============================================================ */
+@media (max-width: 480px) {
+
+  .nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .search-group {
+    max-width: 100%;
+  }
+
+  .app-container {
+    padding: 14px 14px 32px;
+  }
+
+  #hero h2    { font-size: 1.5rem; }
+  .temperature { font-size: 2.2rem; }
+
+  /* Stats collapse to single column on mobile */
+  #stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 14px 16px;
+  }
+
+  .stat-card:last-child {
+    border-bottom: none;
+  }
+
+  /* Forecast wraps to 2-column grid on mobile */
+  #forecastGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+}
