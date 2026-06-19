@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeatherNow</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ===================== NAVIGATION BAR ===================== -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <h1 class="app-title">🌤 WeatherNow</h1>
+      <div class="search-group">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Enter city name..."
+          autocomplete="off"
+        />
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="app-container">
+
+      <!-- ===================== CONTROLS BAR ===================== -->
+      <!-- History chips (bonus) and unit toggle (bonus) sit here -->
+      <div id="controlsBar">
+        <div id="historyBar"></div>
+        <button id="unitToggle" class="hidden">°C / °F</button>
+      </div>
+
+      <!-- ===================== LOADING STATE ===================== -->
+      <div id="loadingMsg" class="hidden">
+        <span class="loading-spinner">⏳</span> Loading weather data...
+      </div>
+
+      <!-- ===================== ERROR MESSAGE ===================== -->
+      <div id="errorMsg" class="hidden"></div>
+
+      <!-- ===================== HERO — CURRENT WEATHER ===================== -->
+      <section id="hero" class="hidden">
+        <span id="weatherIcon" class="weather-icon"></span>
+        <h2 id="cityName"></h2>
+        <p id="country" class="country-text"></p>
+        <p id="temperature" class="temperature"></p>
+        <p id="description" class="description"></p>
+      </section>
+
+      <!-- ===================== STATS ROW ===================== -->
+      <section id="stats" class="hidden">
+        <div class="stat-card">
+          <span class="stat-label">💧 Humidity</span>
+          <span class="stat-value" id="humidity">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">💨 Wind Speed</span>
+          <span class="stat-value" id="windSpeed">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">🌞 UV Index</span>
+          <span class="stat-value" id="uvIndex">—</span>
+        </div>
+      </section>
+
+      <!-- ===================== 5-DAY FORECAST ===================== -->
+      <section id="forecast" class="hidden">
+        <h3>5-Day Forecast</h3>
+        <div id="forecastGrid"></div>
+      </section>
+
+    </div><!-- end .app-container -->
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
