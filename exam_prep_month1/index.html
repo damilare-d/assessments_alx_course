@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Quiz — WEB 103</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== SCREEN 1: START ===== -->
+  <div id="screen-start" class="screen active">
+    <div class="start-card">
+      <div class="start-badge">WEB 103</div>
+      <h1>CSS Mastery<br/><span>Quiz</span></h1>
+      <p class="start-desc">
+        Test your knowledge across all 9 units — selectors, box model,
+        flexbox, grid, animations, and more.
+      </p>
+      <div class="start-meta">
+        <div class="meta-item"><span id="total-count">40</span><label>Questions</label></div>
+        <div class="meta-divider"></div>
+        <div class="meta-item"><span>9</span><label>Units</label></div>
+        <div class="meta-divider"></div>
+        <div class="meta-item"><span>∞</span><label>Attempts</label></div>
+      </div>
+      <div class="start-options">
+        <label class="option-row">
+          <input type="checkbox" id="shuffle-toggle" checked />
+          <span class="toggle-track"><span class="toggle-thumb"></span></span>
+          Shuffle questions
+        </label>
+        <label class="option-row">
+          <input type="checkbox" id="unit-filter-toggle" />
+          <span class="toggle-track"><span class="toggle-thumb"></span></span>
+          Filter by unit
+        </label>
+      </div>
+      <div id="unit-filter-panel" class="unit-filter-panel hidden">
+        <p class="filter-label">Select units to include:</p>
+        <div id="unit-checkboxes" class="unit-checkboxes"></div>
+      </div>
+      <button class="btn-primary" id="start-btn">Start Quiz →</button>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 2: QUIZ ===== -->
+  <div id="screen-quiz" class="screen">
+    <div class="quiz-layout">
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <div class="quiz-logo">CSS<span>Quiz</span></div>
+          <div class="score-ring-wrap">
+            <svg class="score-ring" viewBox="0 0 80 80">
+              <circle class="ring-bg" cx="40" cy="40" r="32"/>
+              <circle class="ring-fill" id="ring-fill" cx="40" cy="40" r="32"
+                stroke-dasharray="201.06" stroke-dashoffset="201.06"/>
+            </svg>
+            <div class="score-ring-text">
+              <span id="sidebar-score">0</span>
+              <small>score</small>
+            </div>
+          </div>
+          <div class="sidebar-stats">
+            <div class="stat"><span id="stat-correct">0</span><label>Correct</label></div>
+            <div class="stat"><span id="stat-wrong">0</span><label>Wrong</label></div>
+            <div class="stat"><span id="stat-left">0</span><label>Left</label></div>
+          </div>
+        </div>
+        <div class="sidebar-bottom">
+          <div class="progress-label">
+            <span id="progress-text">Question 1</span>
+            <span id="progress-frac">1 / 40</span>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progress-bar"></div>
+          </div>
+          <div id="unit-tag" class="unit-tag"></div>
+          <button class="btn-ghost" id="quit-btn">✕ Quit Quiz</button>
+        </div>
+      </aside>
+
+      <!-- Main Question Area -->
+      <main class="quiz-main">
+        <div class="question-card" id="question-card">
+          <div class="q-number" id="q-number">01</div>
+          <h2 class="q-text" id="q-text"></h2>
+          <div class="options-grid" id="options-grid"></div>
+          <div class="feedback-box hidden" id="feedback-box">
+            <div class="feedback-icon" id="feedback-icon"></div>
+            <div class="feedback-text" id="feedback-text"></div>
+          </div>
+          <div class="nav-row">
+            <button class="btn-secondary" id="prev-btn" disabled>← Prev</button>
+            <button class="btn-primary" id="next-btn" disabled>Next →</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 3: RESULTS ===== -->
+  <div id="screen-results" class="screen">
+    <div class="results-card">
+      <div class="result-trophy" id="result-trophy">🏆</div>
+      <h2 class="result-title" id="result-title">Quiz Complete!</h2>
+      <div class="result-score-big" id="result-score-big">0%</div>
+      <p class="result-subtitle" id="result-subtitle"></p>
+
+      <div class="result-stats">
+        <div class="rstat correct"><span id="r-correct">0</span><label>Correct</label></div>
+        <div class="rstat wrong"><span id="r-wrong">0</span><label>Wrong</label></div>
+        <div class="rstat skipped"><span id="r-skipped">0</span><label>Skipped</label></div>
+      </div>
+
+      <div class="unit-breakdown" id="unit-breakdown"></div>
+
+      <div class="result-actions">
+        <button class="btn-primary" id="retry-btn">↺ Retry Same Quiz</button>
+        <button class="btn-secondary" id="review-btn">Review Answers</button>
+        <button class="btn-ghost" id="new-quiz-btn">← New Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 4: REVIEW ===== -->
+  <div id="screen-review" class="screen">
+    <div class="review-layout">
+      <div class="review-header">
+        <button class="btn-ghost" id="back-to-results-btn">← Back to Results</button>
+        <h2>Answer Review</h2>
+        <div class="review-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="correct">✓ Correct</button>
+          <button class="filter-btn" data-filter="wrong">✗ Wrong</button>
+        </div>
+      </div>
+      <div class="review-list" id="review-list"></div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
