@@ -1,967 +1,310 @@
+// ════════════════════════════════════════════════════════════
+//  SEMESTER 1 QUIZ — WEB101–107
+//  280 questions  ·  40 per module  ·  Easy / Medium / Hard
+// ════════════════════════════════════════════════════════════
+
 const questions = [
 
-    // ════════════════════════════════════════════
-    // WEB 101 — HTML FUNDAMENTALS
-    // ════════════════════════════════════════════
-  
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "What are the three core technologies of every web page, and what role does each play?",
-      options: [
-        "HTML = style, CSS = structure, JS = behaviour",
-        "HTML = structure, CSS = style, JS = behaviour",
-        "HTML = behaviour, CSS = style, JS = structure",
-        "HTML = structure, JS = style, CSS = behaviour"
-      ],
-      answer: 1,
-      explanation: "HTML provides structure (the skeleton), CSS controls appearance (the clothes), and JavaScript adds behaviour (the muscles that make things move)."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "Which of the following is a self-closing (void) HTML element?",
-      options: ["&lt;p&gt;", "&lt;div&gt;", "&lt;img&gt;", "&lt;span&gt;"],
-      answer: 2,
-      explanation: "<code>&lt;img&gt;</code> is self-closing — it has no content between opening and closing tags. <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, and <code>&lt;span&gt;</code> are normal elements that wrap content."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "What does the <code>alt</code> attribute on an <code>&lt;img&gt;</code> tag do?",
-      options: [
-        "Sets the image width in pixels",
-        "Provides alternative text if the image fails to load and for screen readers",
-        "Adds a tooltip on hover",
-        "Links the image to another page"
-      ],
-      answer: 1,
-      explanation: "<code>alt</code> provides a text description used when the image cannot load and by screen readers for accessibility. Always include it."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "What is the correct nesting rule for HTML elements?",
-      options: [
-        "Elements can overlap — the browser will fix it",
-        "The last tag opened must be the first tag closed",
-        "Closing tags are optional in modern HTML5",
-        "Child elements must always come before parent elements"
-      ],
-      answer: 1,
-      explanation: "HTML nesting works like brackets: the last one opened must be the first one closed. <code>&lt;outer&gt;&lt;inner&gt;&lt;/inner&gt;&lt;/outer&gt;</code> is correct. Overlapping tags produce broken HTML."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "What is the purpose of <code>&lt;!DOCTYPE html&gt;</code>?",
-      options: [
-        "It imports the HTML library from the server",
-        "It tells the browser this is an HTML5 document and should be the very first line",
-        "It creates the root HTML element",
-        "It defines the character encoding"
-      ],
-      answer: 1,
-      explanation: "<code>&lt;!DOCTYPE html&gt;</code> must be the very first line — it tells the browser to render the page in HTML5 standards mode."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "Which HTML element contains all the visible content of a web page?",
-      options: ["&lt;head&gt;", "&lt;html&gt;", "&lt;body&gt;", "&lt;main&gt;"],
-      answer: 2,
-      explanation: "The <code>&lt;body&gt;</code> contains all content users see. The <code>&lt;head&gt;</code> contains metadata that the browser uses but does not display."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "What is the difference between <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code>?",
-      options: [
-        "<code>&lt;ul&gt;</code> is for bold text; <code>&lt;ol&gt;</code> is for italic text",
-        "<code>&lt;ul&gt;</code> creates bullet points; <code>&lt;ol&gt;</code> creates a numbered list",
-        "<code>&lt;ul&gt;</code> is unordered and hidden; <code>&lt;ol&gt;</code> is ordered and visible",
-        "Both create the same type of list — they are interchangeable"
-      ],
-      answer: 1,
-      explanation: "<code>&lt;ul&gt;</code> (unordered list) uses bullet points. <code>&lt;ol&gt;</code> (ordered list) uses numbers. Both contain <code>&lt;li&gt;</code> items."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "Which attribute makes a form link open in a new browser tab?",
-      options: [
-        "<code>rel=\"noopener\"</code>",
-        "<code>target=\"_blank\"</code>",
-        "<code>href=\"new\"</code>",
-        "<code>open=\"tab\"</code>"
-      ],
-      answer: 1,
-      explanation: "<code>target=\"_blank\"</code> on an <code>&lt;a&gt;</code> tag opens the link in a new tab or window."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "How do you create a link that opens the user's email client?",
-      options: [
-        "<code>&lt;a href=\"email:hello@example.com\"&gt;</code>",
-        "<code>&lt;a href=\"mail:hello@example.com\"&gt;</code>",
-        "<code>&lt;a href=\"mailto:hello@example.com\"&gt;</code>",
-        "<code>&lt;a href=\"send:hello@example.com\"&gt;</code>"
-      ],
-      answer: 2,
-      explanation: "The <code>mailto:</code> scheme in the <code>href</code> attribute opens the user's default email application with the address pre-filled."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "What does the <code>required</code> attribute do on an input field?",
-      options: [
-        "Adds a red border to the input",
-        "Prevents the form from submitting if the field is empty",
-        "Makes the field read-only",
-        "Sets a default placeholder value"
-      ],
-      answer: 1,
-      explanation: "<code>required</code> enables basic client-side validation — the browser will not submit the form if the field is left empty."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "What is the difference between <code>GET</code> and <code>POST</code> as form methods?",
-      options: [
-        "GET sends data in the URL; POST sends data in the request body",
-        "GET encrypts form data; POST does not",
-        "POST sends data in the URL; GET hides it in the body",
-        "There is no functional difference — use either one"
-      ],
-      answer: 0,
-      explanation: "<code>GET</code> appends form data to the URL (visible, bookmarkable, limited size). <code>POST</code> sends data in the request body (hidden from URL, used for sensitive or large data)."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "Which input type triggers a date-picker calendar widget in the browser?",
-      options: [
-        "<code>type=\"calendar\"</code>",
-        "<code>type=\"picker\"</code>",
-        "<code>type=\"date\"</code>",
-        "<code>type=\"datetime\"</code>"
-      ],
-      answer: 2,
-      explanation: "<code>&lt;input type=\"date\"&gt;</code> renders a native date-picker widget in modern browsers."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "What does DNS stand for, and what does it do?",
-      options: [
-        "Dynamic Node Server — manages backend connections",
-        "Domain Name System — converts domain names to IP addresses",
-        "Direct Network Signal — routes packets between servers",
-        "Data Network Standard — encrypts internet traffic"
-      ],
-      answer: 1,
-      explanation: "DNS (Domain Name System) is the internet's phone book — it translates human-readable domain names like <code>google.com</code> into numerical IP addresses like <code>142.250.80.46</code>."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "Which attribute on the <code>&lt;video&gt;</code> tag makes the browser display play/pause controls?",
-      options: ["<code>play</code>", "<code>controls</code>", "<code>autoplay</code>", "<code>display</code>"],
-      answer: 1,
-      explanation: "The <code>controls</code> attribute renders the browser's native video controls bar — play, pause, volume, and seek."
-    },
-    {
-      unit: "WEB101 · HTML Basics",
-      question: "How does the <code>download</code> attribute on an <code>&lt;a&gt;</code> tag change link behaviour?",
-      options: [
-        "It opens the file in a new tab instead of the current one",
-        "It tells the browser to save the file to disk rather than opening it",
-        "It validates that the file exists before navigation",
-        "It compresses the file before downloading"
-      ],
-      answer: 1,
-      explanation: "Adding <code>download</code> to an anchor tag triggers a file save dialog instead of opening the file. It only works for same-origin files."
-    },
-  
-    // ════════════════════════════════════════════
-    // WEB 102 — GIT & GITHUB
-    // ════════════════════════════════════════════
-  
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "What is the key difference between Git and GitHub?",
-      options: [
-        "Git is a website; GitHub is a command-line tool",
-        "Git is a local version control tool on your computer; GitHub is a cloud hosting service for Git repositories",
-        "Git handles JavaScript files; GitHub handles HTML files",
-        "They are the same thing — different names for the same product"
-      ],
-      answer: 1,
-      explanation: "Git is software installed on your machine that tracks changes locally — it works offline. GitHub is a website (owned by Microsoft) that hosts Git repositories in the cloud for backup and collaboration."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "What do the three areas of Git represent? (Working Tree → Staging Area → Repository)",
-      options: [
-        "Files on the internet → files on your computer → files deleted",
-        "Files you are editing → files chosen for the next commit → permanent commit history",
-        "Old files → current files → future files",
-        "Local files → shared files → archived files"
-      ],
-      answer: 1,
-      explanation: "Working Tree = files you are actively editing. Staging Area = files selected for the next commit (the basket). Repository = the permanent history stored in the <code>.git</code> folder."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "What does <code>git add .</code> do?",
-      options: [
-        "Creates a new commit with all changes",
-        "Stages ALL changed files in the current directory and subfolders",
-        "Pushes all files to GitHub",
-        "Adds a new branch called '.' to the repository"
-      ],
-      answer: 1,
-      explanation: "<code>git add .</code> moves all changed files from the Working Tree to the Staging Area. You still need to run <code>git commit</code> to save the snapshot."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "What is a Git commit?",
-      options: [
-        "A branch of the repository",
-        "A saved snapshot of your project at a specific moment, with a unique ID and message",
-        "A connection between your local repo and GitHub",
-        "A request to merge two branches"
-      ],
-      answer: 1,
-      explanation: "A commit is a permanent snapshot stored in the repository. Each commit has a unique hash ID, a timestamp, the author's name, and a message describing what changed."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "What is <code>HEAD</code> in Git?",
-      options: [
-        "The first commit ever made in the repository",
-        "A pointer showing which commit you are currently at",
-        "The name of the main branch",
-        "The remote GitHub repository"
-      ],
-      answer: 1,
-      explanation: "HEAD is a pointer that tells Git 'this is where you currently are'. It normally points to the latest commit on your active branch and moves forward with each new commit."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "Which command creates a new branch AND switches to it in one step?",
-      options: [
-        "<code>git branch new-feature</code>",
-        "<code>git checkout new-feature</code>",
-        "<code>git switch -c new-feature</code>",
-        "<code>git create new-feature</code>"
-      ],
-      answer: 2,
-      explanation: "<code>git switch -c branch-name</code> creates and switches in one command. <code>git branch name</code> only creates; you then need <code>git switch name</code> separately."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "What happens when you use <code>git reset --hard HEAD~1</code>?",
-      options: [
-        "It undoes the last commit but keeps the changes in your files",
-        "It permanently deletes the last commit AND discards the file changes",
-        "It creates a new commit that reverses the last one",
-        "It moves HEAD to the first commit"
-      ],
-      answer: 1,
-      explanation: "<code>--hard</code> discards both the commit and any file changes. Use with extreme caution — this cannot be undone. <code>--soft</code> keeps the file changes while removing the commit."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "What is a merge conflict, and when does it occur?",
-      options: [
-        "When you try to push to a private repository without permission",
-        "When two branches changed the same line differently and Git cannot auto-decide which to keep",
-        "When the remote repository is ahead of your local one",
-        "When you delete a branch that has unmerged commits"
-      ],
-      answer: 1,
-      explanation: "A merge conflict occurs when two branches have made different changes to the same line. Git marks the conflicting section and asks you to manually resolve which version to keep."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "What is the difference between <code>git pull</code> and <code>git fetch</code>?",
-      options: [
-        "They are identical commands with different names",
-        "<code>git fetch</code> downloads changes and merges them; <code>git pull</code> only downloads",
-        "<code>git pull</code> downloads AND merges; <code>git fetch</code> only downloads without merging",
-        "<code>git pull</code> uploads files; <code>git fetch</code> downloads files"
-      ],
-      answer: 2,
-      explanation: "<code>git fetch</code> downloads changes from GitHub but does not integrate them — lets you review first. <code>git pull</code> downloads and immediately merges into your current branch."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "For GitHub Pages to work, what must your homepage file be named?",
-      options: ["home.html", "main.html", "index.html", "default.html"],
-      answer: 2,
-      explanation: "GitHub Pages automatically serves <code>index.html</code> as the homepage. A differently-named file will result in a 404 error when visitors go to your site URL."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "Why does GitHub Pages require all filenames to be lowercase?",
-      options: [
-        "Lowercase files load faster on GitHub's servers",
-        "GitHub Pages runs on Linux servers which are case-sensitive — Photo.jpg and photo.jpg are different files",
-        "GitHub's file system does not support uppercase letters",
-        "It is a styling convention only — there is no technical reason"
-      ],
-      answer: 1,
-      explanation: "Linux file systems are case-sensitive. A file named <code>Photo.jpg</code> referenced as <code>photo.jpg</code> works on Windows (case-insensitive) but breaks on the Linux server that hosts GitHub Pages."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "Why did GitHub stop accepting passwords for HTTPS authentication in 2021?",
-      options: [
-        "Passwords were too long for GitHub's systems",
-        "Passwords are insecure for automated workflows — Personal Access Tokens (PATs) replaced them",
-        "GitHub switched to SSH-only authentication",
-        "Two-factor authentication made passwords redundant"
-      ],
-      answer: 1,
-      explanation: "GitHub deprecated password authentication for HTTPS in August 2021. You must now use a Personal Access Token (PAT) as the password, or set up SSH key authentication."
-    },
-    {
-      unit: "WEB102 · Git & GitHub",
-      question: "What does <code>git init</code> do?",
-      options: [
-        "Downloads an existing repository from GitHub",
-        "Turns the current folder into a Git repository by creating a hidden .git folder",
-        "Configures your global Git username and email",
-        "Creates the first commit in a repository"
-      ],
-      answer: 1,
-      explanation: "<code>git init</code> initialises a new local repository. Git creates a hidden <code>.git</code> folder where all version history will be stored. Run it once per project."
-    },
-  
-    // ════════════════════════════════════════════
-    // WEB 103 — CSS
-    // ════════════════════════════════════════════
-  
-    {
-      unit: "WEB103 · CSS",
-      question: "In the CSS rule <code>h1 { color: blue; }</code>, what is <code>h1</code> called?",
-      options: ["Property", "Value", "Selector", "Declaration"],
-      answer: 2,
-      explanation: "The selector picks which HTML element to style. Here, <code>h1</code> targets all <code>&lt;h1&gt;</code> tags on the page."
-    },
-    {
-      unit: "WEB103 · CSS",
-      question: "What is the specificity order from lowest to highest score?",
-      options: [
-        "Element → Class → ID → Inline style",
-        "Inline style → ID → Class → Element",
-        "ID → Class → Element → Inline style",
-        "Class → Element → ID → Inline style"
-      ],
-      answer: 0,
-      explanation: "Element selector scores 1, class selector scores 10, ID selector scores 100, inline style scores 1000. Higher score wins when rules conflict."
-    },
-    {
-      unit: "WEB103 · CSS",
-      question: "In the CSS Box Model, which layer is outermost?",
-      options: ["Content", "Padding", "Border", "Margin"],
-      answer: 3,
-      explanation: "From outside in: Margin → Border → Padding → Content. Margin pushes other elements away; padding creates space inside the border around the content."
-    },
-    {
-      unit: "WEB103 · CSS",
-      question: "What does <code>box-sizing: border-box</code> do?",
-      options: [
-        "Adds a border automatically to every element",
-        "Makes the element's width include padding and border, not add on top",
-        "Removes all default margins from the element",
-        "Makes the element a flex container"
-      ],
-      answer: 1,
-      explanation: "With <code>border-box</code>, the declared <code>width</code> already includes padding and border — far more predictable. Always add <code>* { box-sizing: border-box; }</code>."
-    },
-    {
-      unit: "WEB103 · CSS",
-      question: "Which CSS property is recommended for font sizes to respect browser accessibility settings?",
-      options: ["px", "pt", "rem", "vh"],
-      answer: 2,
-      explanation: "<code>rem</code> scales relative to the browser's root font size — respecting user accessibility preferences. Fixed <code>px</code> values ignore those settings."
-    },
-    {
-      unit: "WEB103 · CSS",
-      question: "Which Flexbox property controls alignment along the <strong>main axis</strong>?",
-      options: ["align-items", "align-content", "justify-content", "flex-direction"],
-      answer: 2,
-      explanation: "<code>justify-content</code> aligns items along the main axis (horizontal by default). <code>align-items</code> aligns along the cross axis (vertical by default)."
-    },
-    {
-      unit: "WEB103 · CSS",
-      question: "What does <code>grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))</code> achieve?",
-      options: [
-        "Creates exactly 260 columns",
-        "Automatically adjusts the number of columns based on available screen width with no media queries",
-        "Sets all grid rows to a minimum height of 260px",
-        "Fills empty cells with placeholder content"
-      ],
-      answer: 1,
-      explanation: "<code>auto-fill</code> packs as many columns as fit. <code>minmax(260px, 1fr)</code> makes each column at least 260px but flexible — a fully responsive grid with zero media queries."
-    },
-    {
-      unit: "WEB103 · CSS",
-      question: "What is the mobile-first approach to CSS?",
-      options: [
-        "Write desktop styles first, then override with <code>max-width</code> queries for smaller screens",
-        "Write base CSS for mobile, then add <code>min-width</code> media queries for larger screens",
-        "Write separate stylesheets for each device",
-        "Use JavaScript to inject styles based on screen size"
-      ],
-      answer: 1,
-      explanation: "Mobile-first: base CSS targets mobile screens. Then <code>@media (min-width: ...)</code> progressively enhances for tablets (600px) and desktops (1024px+)."
-    },
-    {
-      unit: "WEB103 · CSS",
-      question: "Which two CSS properties should you prefer animating for the best performance?",
-      options: [
-        "<code>width</code> and <code>height</code>",
-        "<code>margin</code> and <code>padding</code>",
-        "<code>transform</code> and <code>opacity</code>",
-        "<code>color</code> and <code>font-size</code>"
-      ],
-      answer: 2,
-      explanation: "<code>transform</code> and <code>opacity</code> are GPU-accelerated and do not trigger layout recalculations — guaranteeing smooth 60fps animations on all devices."
-    },
-    {
-      unit: "WEB103 · CSS",
-      question: "Where should CSS custom properties (variables) typically be declared for global use?",
-      options: ["body", ":root", ":global", "html > *"],
-      answer: 1,
-      explanation: "Declaring variables in <code>:root</code> makes them available to every element on the page, since <code>:root</code> targets the top-level <code>&lt;html&gt;</code> element."
-    },
-  
-    // ════════════════════════════════════════════
-    // WEB 104 — JAVASCRIPT FUNDAMENTALS
-    // ════════════════════════════════════════════
-  
-    {
-      unit: "WEB104 · JavaScript Fundamentals",
-      question: "Which keyword should you use by default when declaring a variable in JavaScript?",
-      options: ["var", "let", "const", "def"],
-      answer: 2,
-      explanation: "Use <code>const</code> by default for values that will not change. Switch to <code>let</code> only when you need to reassign. Avoid <code>var</code> — it has confusing scoping behaviour."
-    },
-    {
-      unit: "WEB104 · JavaScript Fundamentals",
-      question: "What is the output of <code>typeof null</code> in JavaScript?",
-      options: ["'null'", "'undefined'", "'object'", "'boolean'"],
-      answer: 2,
-      explanation: "<code>typeof null</code> returns <code>'object'</code> — this is a well-known JavaScript bug that has been kept for backward compatibility. <code>null</code> is not actually an object."
-    },
-    {
-      unit: "WEB104 · JavaScript Fundamentals",
-      question: "What is the difference between <code>===</code> and <code>==</code> in JavaScript?",
-      options: [
-        "They are identical — use either one",
-        "<code>==</code> checks value AND type; <code>===</code> only checks value",
-        "<code>===</code> checks value AND type; <code>==</code> only checks value and converts types",
-        "<code>===</code> is used for numbers; <code>==</code> is used for strings"
-      ],
-      answer: 2,
-      explanation: "<code>===</code> (strict equality) checks both value AND type: <code>'5' === 5</code> is <code>false</code>. <code>==</code> coerces types: <code>'5' == 5</code> is <code>true</code>. Always use <code>===</code>."
-    },
-    {
-      unit: "WEB104 · JavaScript Fundamentals",
-      question: "What is a template literal and how is it written?",
-      options: [
-        "A string in double quotes that auto-capitalises text",
-        "A string wrapped in backticks that allows embedding variables with <code>${expression}</code>",
-        "A reusable HTML snippet stored in a JavaScript variable",
-        "A string concatenated with the <code>+</code> operator"
-      ],
-      answer: 1,
-      explanation: "Template literals use backticks (<code>`</code>) and allow embedding expressions: <code>`Hello, ${name}!`</code> — much cleaner than <code>'Hello, ' + name + '!'</code>."
-    },
-    {
-      unit: "WEB104 · JavaScript Fundamentals",
-      question: "What is the difference between <code>undefined</code> and <code>null</code>?",
-      options: [
-        "They are identical and can be used interchangeably",
-        "<code>undefined</code> means a variable was declared but not assigned; <code>null</code> is deliberately set to 'empty' by a programmer",
-        "<code>null</code> means a variable was declared but not assigned; <code>undefined</code> is set intentionally",
-        "<code>undefined</code> is a string type; <code>null</code> is a number type"
-      ],
-      answer: 1,
-      explanation: "JavaScript sets <code>undefined</code> automatically on unassigned variables. <code>null</code> is intentional — a programmer explicitly sets a variable to 'no value'."
-    },
-    {
-      unit: "WEB104 · JavaScript Fundamentals",
-      question: "What does the ternary operator <code>age >= 18 ? 'Adult' : 'Minor'</code> do?",
-      options: [
-        "It creates a new variable called 'Adult'",
-        "It is shorthand for an if/else — returns 'Adult' if the condition is true, 'Minor' if false",
-        "It checks if age equals 18 or 'Minor'",
-        "It throws an error if age is not defined"
-      ],
-      answer: 1,
-      explanation: "The ternary <code>condition ? valueIfTrue : valueIfFalse</code> is a one-line if/else. Useful for simple yes/no assignments."
-    },
-    {
-      unit: "WEB104 · JavaScript Fundamentals",
-      question: "What is the key difference between a <code>while</code> loop and a <code>do...while</code> loop?",
-      options: [
-        "There is no difference — they produce identical results",
-        "<code>while</code> checks the condition before each run; <code>do...while</code> always runs the code at least once before checking",
-        "<code>do...while</code> checks the condition before running; <code>while</code> runs at least once",
-        "<code>while</code> is used for arrays; <code>do...while</code> is used for objects"
-      ],
-      answer: 1,
-      explanation: "<code>while</code> may never execute if the condition is false from the start. <code>do...while</code> always runs at least once — the check happens after the first execution."
-    },
-    {
-      unit: "WEB104 · JavaScript Fundamentals",
-      question: "When should you use <code>for...of</code> vs <code>for...in</code>?",
-      options: [
-        "<code>for...of</code> is for objects; <code>for...in</code> is for arrays",
-        "<code>for...of</code> iterates over values in an array/string; <code>for...in</code> iterates over keys in an object",
-        "They are interchangeable — both work on arrays and objects",
-        "<code>for...of</code> is the old syntax; <code>for...in</code> is modern"
-      ],
-      answer: 1,
-      explanation: "<code>for...of</code> gives you each value directly from an array or string. <code>for...in</code> gives you each key name from an object."
-    },
-    {
-      unit: "WEB104 · JavaScript Fundamentals",
-      question: "What is the difference between a function declaration and an arrow function?",
-      options: [
-        "Arrow functions cannot accept parameters",
-        "Function declarations use the <code>function</code> keyword; arrow functions use <code>=&gt;</code> and are typically shorter",
-        "Arrow functions create new scope; function declarations do not",
-        "Function declarations are stored in memory; arrow functions are not"
-      ],
-      answer: 1,
-      explanation: "Arrow functions (<code>const add = (a, b) => a + b</code>) are a shorter ES6 syntax. Both work similarly for most cases, though arrow functions differ in their handling of <code>this</code>."
-    },
-    {
-      unit: "WEB104 · JavaScript Fundamentals",
-      question: "What is a closure in JavaScript?",
-      options: [
-        "When a function is called without any arguments",
-        "When an inner function remembers and accesses variables from its outer function's scope, even after the outer function has finished",
-        "When a function closes the browser tab",
-        "When a loop variable is reused across iterations"
-      ],
-      answer: 1,
-      explanation: "A closure occurs when an inner function retains a reference to variables from its surrounding scope. The inner function 'closes over' those variables, keeping them alive in memory."
-    },
-    {
-      unit: "WEB104 · JavaScript Fundamentals",
-      question: "What is the difference between block scope (<code>let</code>/<code>const</code>) and function scope (<code>var</code>)?",
-      options: [
-        "<code>var</code> is only accessible inside the block it was declared in; <code>let</code>/<code>const</code> are accessible anywhere in the function",
-        "<code>let</code>/<code>const</code> are only accessible inside the <code>{ }</code> they were declared in; <code>var</code> is accessible anywhere in the enclosing function",
-        "Both <code>var</code> and <code>let</code> are globally scoped by default",
-        "There is no difference in modern JavaScript"
-      ],
-      answer: 1,
-      explanation: "<code>let</code> and <code>const</code> are block-scoped — they die when their <code>{ }</code> block ends. <code>var</code> leaks out of blocks and is scoped to the entire function, causing confusing bugs."
-    },
-  
-    // ════════════════════════════════════════════
-    // WEB 105 — ARRAYS, DOM, BOM & EVENTS
-    // ════════════════════════════════════════════
-  
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What does <code>arr.map(fn)</code> return?",
-      options: [
-        "The first element that passes the test",
-        "A new array with each item transformed by the function",
-        "The original array modified in place",
-        "A boolean indicating whether all items pass the test"
-      ],
-      answer: 1,
-      explanation: "<code>map()</code> always returns a NEW array — it does not modify the original. Each item is transformed by the provided function. The new and old arrays have the same length."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What is the difference between <code>arr.map()</code> and <code>arr.forEach()</code>?",
-      options: [
-        "<code>map()</code> modifies the original array; <code>forEach()</code> returns a new one",
-        "<code>map()</code> returns a new transformed array; <code>forEach()</code> returns nothing",
-        "They are identical — use either one",
-        "<code>forEach()</code> can only be used with strings; <code>map()</code> with numbers"
-      ],
-      answer: 1,
-      explanation: "<code>map()</code> returns a new array. <code>forEach()</code> returns <code>undefined</code> — use it when you only need side effects like logging, not when you need a new array."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What is a JavaScript <code>Set</code> and how does it differ from an Array?",
-      options: [
-        "A Set is a sorted array; an Array is unsorted",
-        "A Set only stores unique values and uses <code>.size</code> not <code>.length</code>; Arrays allow duplicates",
-        "A Set stores key-value pairs; an Array stores single values",
-        "A Set is faster than an Array for all operations"
-      ],
-      answer: 1,
-      explanation: "A <code>Set</code> automatically removes duplicates — adding the same value twice is ignored. It uses <code>.size</code>, not <code>.length</code>, and lacks index-based access."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What is the DOM?",
-      options: [
-        "A CSS framework for styling HTML",
-        "The JavaScript engine inside the browser",
-        "A live JavaScript representation of the HTML page that JavaScript can read and modify",
-        "A server-side database of web documents"
-      ],
-      answer: 2,
-      explanation: "The DOM (Document Object Model) is a tree of JavaScript objects the browser builds from your HTML. JavaScript interacts with the DOM — not the HTML file directly — to update the page."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What is the difference between <code>querySelector</code> and <code>querySelectorAll</code>?",
-      options: [
-        "<code>querySelector</code> uses CSS selectors; <code>querySelectorAll</code> uses XPath",
-        "<code>querySelector</code> returns the first matching element; <code>querySelectorAll</code> returns all matches as a NodeList",
-        "<code>querySelectorAll</code> is faster but less accurate",
-        "Both return the same type — the difference is only in syntax"
-      ],
-      answer: 1,
-      explanation: "<code>querySelector</code> returns one element (the first match). <code>querySelectorAll</code> returns a NodeList of all matches, which you can loop with <code>forEach</code>."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What is the difference between <code>textContent</code> and <code>innerHTML</code>?",
-      options: [
-        "They are identical — the name is different but the behaviour is the same",
-        "<code>textContent</code> sets plain text safely; <code>innerHTML</code> parses and renders HTML tags",
-        "<code>innerHTML</code> is read-only; <code>textContent</code> is writable",
-        "<code>textContent</code> only works on <code>&lt;p&gt;</code> tags; <code>innerHTML</code> works on all elements"
-      ],
-      answer: 1,
-      explanation: "<code>textContent</code> treats everything as literal text — safe. <code>innerHTML</code> parses HTML, so <code>'&lt;b&gt;hi&lt;/b&gt;'</code> renders bold. Never set <code>innerHTML</code> from user input — it creates XSS vulnerabilities."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "Why is <code>addEventListener</code> preferred over using <code>element.onclick = fn</code>?",
-      options: [
-        "addEventListener works on all browsers; onclick does not",
-        "addEventListener allows multiple listeners on the same element; onclick overwrites the previous one",
-        "onclick is deprecated and removed from modern browsers",
-        "addEventListener is faster because it uses native events"
-      ],
-      answer: 1,
-      explanation: "Assigning to <code>onclick</code> replaces any previous handler. <code>addEventListener</code> stacks multiple handlers — all run when the event fires."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What does <code>event.preventDefault()</code> do?",
-      options: [
-        "Removes the event listener from the element",
-        "Stops the event from bubbling up to parent elements",
-        "Prevents the browser's default behaviour — such as a form reloading on submit",
-        "Prevents the event from firing more than once"
-      ],
-      answer: 2,
-      explanation: "<code>event.preventDefault()</code> cancels the browser's default action. For forms, it stops the page reload. For links, it stops navigation. This is essential for custom form handling."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What is event bubbling?",
-      options: [
-        "Events fire only on the element they are attached to",
-        "After an event fires on the target, it travels upward through each parent element",
-        "Events fire on all child elements simultaneously",
-        "An event fires repeatedly until stopped"
-      ],
-      answer: 1,
-      explanation: "When you click an element, the event fires on that element first, then bubbles up through each ancestor. Use <code>event.stopPropagation()</code> to prevent this."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What is event delegation, and why is it useful?",
-      options: [
-        "Assigning one event listener per element for maximum control",
-        "Attaching one listener to a parent that handles events from all its children — even ones added later",
-        "Delegating event handling to the server instead of the browser",
-        "Copying event listeners from one element to another"
-      ],
-      answer: 1,
-      explanation: "Event delegation uses one parent listener and <code>event.target</code> to identify which child triggered it. It's efficient and automatically handles dynamically added elements."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What is the difference between <code>DOMContentLoaded</code> and <code>window load</code>?",
-      options: [
-        "<code>DOMContentLoaded</code> fires after images load; <code>load</code> fires when HTML is parsed",
-        "<code>DOMContentLoaded</code> fires when HTML is parsed (faster); <code>load</code> fires after all images and assets are loaded",
-        "They fire at exactly the same time",
-        "<code>load</code> only works on Internet Explorer"
-      ],
-      answer: 1,
-      explanation: "<code>DOMContentLoaded</code> fires as soon as the HTML is ready — use this for most JS setup. <code>window load</code> waits for images and all resources, which is much slower."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What does array destructuring <code>const [a, b, ...rest] = arr</code> do?",
-      options: [
-        "Creates a new array from <code>a</code>, <code>b</code>, and <code>rest</code>",
-        "Assigns the first item to <code>a</code>, second to <code>b</code>, and collects remaining items into <code>rest</code>",
-        "Spreads all items into three separate arrays",
-        "Checks if the array has at least three elements"
-      ],
-      answer: 1,
-      explanation: "Destructuring unpacks array values by position. The rest parameter <code>...rest</code> collects all remaining items into a new array."
-    },
-    {
-      unit: "WEB105 · DOM, Arrays & Events",
-      question: "What does <code>setInterval(fn, 1000)</code> do, and how do you stop it?",
-      options: [
-        "Runs <code>fn</code> once after 1 second; stops automatically",
-        "Runs <code>fn</code> every 1 second indefinitely; stop it with <code>clearInterval(id)</code>",
-        "Runs <code>fn</code> exactly 1000 times then stops",
-        "Pauses execution for 1 second then continues"
-      ],
-      answer: 1,
-      explanation: "<code>setInterval</code> repeats <code>fn</code> every 1000ms until stopped. Save its return value as an ID and call <code>clearInterval(id)</code> when you want it to stop."
-    },
-  
-    // ════════════════════════════════════════════
-    // WEB 106 — ASYNC JS, PROMISES, FETCH
-    // ════════════════════════════════════════════
-  
-    {
-      unit: "WEB106 · Async JS & Fetch",
-      question: "What does 'asynchronous' mean in the context of JavaScript?",
-      options: [
-        "Code that runs in a separate browser window",
-        "Code that starts a slow task and moves on without waiting, coming back when the task completes",
-        "Code that always executes in random order",
-        "Code that requires a server to execute"
-      ],
-      answer: 1,
-      explanation: "Asynchronous code does not block — slow tasks (like fetching data) are handed off and JavaScript continues executing. When the task finishes, a callback or Promise handles the result."
-    },
-    {
-      unit: "WEB106 · Async JS & Fetch",
-      question: "What is 'callback hell' and why is it a problem?",
-      options: [
-        "When too many events fire at the same time",
-        "Deeply nested callbacks required for sequential async tasks — making code hard to read, debug, and maintain",
-        "When a callback function is called without any arguments",
-        "When setInterval runs indefinitely"
-      ],
-      answer: 1,
-      explanation: "Callback hell occurs when sequential async operations require nesting callbacks inside callbacks. The code indents deeper and deeper, becoming unreadable. Promises were invented to solve this."
-    },
-    {
-      unit: "WEB106 · Async JS & Fetch",
-      question: "What are the three possible states of a JavaScript Promise?",
-      options: [
-        "Loading, Loaded, Failed",
-        "Pending, Fulfilled, Rejected",
-        "Waiting, Success, Error",
-        "Init, Running, Done"
-      ],
-      answer: 1,
-      explanation: "A Promise starts as <strong>Pending</strong>. It settles into either <strong>Fulfilled</strong> (success — <code>resolve()</code> was called) or <strong>Rejected</strong> (failure — <code>reject()</code> was called). It never goes back."
-    },
-    {
-      unit: "WEB106 · Async JS & Fetch",
-      question: "In a Promise chain, what must you do inside <code>.then()</code> when calling the next async function?",
-      options: [
-        "Call <code>await</code> before the function",
-        "Return the next Promise — otherwise the chain breaks and the next <code>.then()</code> gets <code>undefined</code>",
-        "Wrap it in a <code>try/catch</code> block",
-        "Call <code>resolve()</code> manually"
-      ],
-      answer: 1,
-      explanation: "Inside <code>.then()</code>, always <code>return</code> the next Promise: <code>.then(data => return nextCall(data))</code>. Forgetting the <code>return</code> breaks the chain."
-    },
-    {
-      unit: "WEB106 · Async JS & Fetch",
-      question: "What is the advantage of <code>Promise.all()</code>?",
-      options: [
-        "It makes Promises run in strict sequence one after another",
-        "It runs multiple Promises simultaneously and resolves when all succeed, saving total wait time",
-        "It retries failed Promises automatically",
-        "It converts callbacks into Promises"
-      ],
-      answer: 1,
-      explanation: "<code>Promise.all([p1, p2, p3])</code> starts all three at once. Total time equals the slowest one — much faster than running them sequentially. If any rejects, the whole <code>Promise.all</code> rejects."
-    },
-    {
-      unit: "WEB106 · Async JS & Fetch",
-      question: "What does the <code>async</code> keyword do to a function?",
-      options: [
-        "Makes the function run on a separate thread",
-        "Allows <code>await</code> to be used inside it and automatically makes it return a Promise",
-        "Makes all code inside it run synchronously",
-        "Prevents the function from being called more than once"
-      ],
-      answer: 1,
-      explanation: "An <code>async</code> function always returns a Promise (wrapping the return value automatically) and unlocks the use of <code>await</code> inside it."
-    },
-    {
-      unit: "WEB106 · Async JS & Fetch",
-      question: "What does <code>await</code> do inside an <code>async</code> function?",
-      options: [
-        "Pauses the ENTIRE browser until the Promise resolves",
-        "Pauses execution of the async function only until the Promise settles, then gives you the resolved value",
-        "Converts a synchronous function into an async one",
-        "Runs the Promise in a background worker thread"
-      ],
-      answer: 1,
-      explanation: "<code>await</code> pauses only the enclosing <code>async</code> function — the rest of the page remains interactive. It then 'unwraps' the Promise and gives you the resolved value directly."
-    },
-    {
-      unit: "WEB106 · Async JS & Fetch",
-      question: "Why must you check <code>response.ok</code> after a <code>fetch()</code> call?",
-      options: [
-        "Because <code>fetch()</code> always returns a string that must be validated",
-        "Because <code>fetch()</code> only rejects on network failure — HTTP errors like 404 still resolve, so you must manually check <code>response.ok</code>",
-        "Because <code>response.ok</code> enables JSON parsing",
-        "Because <code>fetch()</code> returns <code>undefined</code> without this check"
-      ],
-      answer: 1,
-      explanation: "<code>fetch()</code> only throws if there is a network failure (no internet). A 404 or 500 response still resolves the Promise with a Response object where <code>response.ok</code> is <code>false</code>. Always check it."
-    },
-    {
-      unit: "WEB106 · Async JS & Fetch",
-      question: "Why are there two <code>await</code> calls needed when using <code>fetch()</code>?",
-      options: [
-        "Because the first <code>await</code> fetches HTML and the second fetches CSS",
-        "Because <code>fetch()</code> first resolves to a Response object, then <code>response.json()</code> resolves to the actual data — each is a separate Promise",
-        "Because network requests always require two round trips",
-        "It is a best practice but only one is technically required"
-      ],
-      answer: 1,
-      explanation: "First <code>await fetch(url)</code> gives a Response object. Then <code>await response.json()</code> reads the body and parses it as JSON. Two Promises, two <code>await</code> calls."
-    },
-    {
-      unit: "WEB106 · Async JS & Fetch",
-      question: "When making a POST request with <code>fetch()</code>, what must you include in the options object?",
-      options: [
-        "Only the URL and a body string",
-        "<code>method: 'POST'</code>, a <code>Content-Type</code> header, and <code>body: JSON.stringify(data)</code>",
-        "Only <code>method: 'POST'</code> — the rest is optional",
-        "<code>type: 'POST'</code> and <code>data: JSON.stringify(data)</code>"
-      ],
-      answer: 1,
-      explanation: "A POST needs: <code>method: 'POST'</code>, a <code>headers</code> object with <code>Content-Type: application/json</code>, and <code>body: JSON.stringify(data)</code> to convert your JS object to a JSON string."
-    },
-  
-    // ════════════════════════════════════════════
-    // WEB 107 — OOP IN JAVASCRIPT
-    // ════════════════════════════════════════════
-  
-    {
-      unit: "WEB107 · OOP in JavaScript",
-      question: "In OOP, what is the difference between a class and an instance?",
-      options: [
-        "A class is the real object; an instance is the blueprint",
-        "A class is the blueprint (written once); an instance is a real object created from it (created with <code>new</code>)",
-        "They are identical — 'class' and 'instance' are synonyms",
-        "A class stores data; an instance stores methods"
-      ],
-      answer: 1,
-      explanation: "A class defines the shape — properties and methods. Instances are the actual objects built from that blueprint with <code>new ClassName()</code>. You write one class but can create many instances."
-    },
-    {
-      unit: "WEB107 · OOP in JavaScript",
-      question: "What is the <code>constructor</code> method in a class?",
-      options: [
-        "A method that destroys an instance when it is no longer needed",
-        "A special method that runs automatically when a new instance is created, used to set initial properties",
-        "A method that copies one instance to another",
-        "A static method for validating class data"
-      ],
-      answer: 1,
-      explanation: "The <code>constructor</code> runs automatically when you call <code>new ClassName()</code>. It receives the arguments you pass and uses <code>this</code> to assign initial properties to the new object."
-    },
-    {
-      unit: "WEB107 · OOP in JavaScript",
-      question: "Inside a class, what does <code>this</code> refer to?",
-      options: [
-        "The class itself",
-        "The specific instance that called the method",
-        "The parent class",
-        "The global <code>window</code> object"
-      ],
-      answer: 1,
-      explanation: "<code>this</code> always refers to the current instance. When <code>alice.greet()</code> runs, <code>this</code> is <code>alice</code>. When <code>bob.greet()</code> runs, <code>this</code> is <code>bob</code>."
-    },
-    {
-      unit: "WEB107 · OOP in JavaScript",
-      question: "What is a static method, and how is it different from a regular method?",
-      options: [
-        "A static method is called on an instance; a regular method is called on the class",
-        "A static method is called on the class directly and has no access to instance data; a regular method is called on an instance",
-        "Static methods are inherited; regular methods are not",
-        "Static methods run faster because they are cached"
-      ],
-      answer: 1,
-      explanation: "Static methods belong to the class, not instances: <code>Student.passMark()</code> not <code>alice.passMark()</code>. They cannot use <code>this</code> to access instance data — useful for utility functions."
-    },
-    {
-      unit: "WEB107 · OOP in JavaScript",
-      question: "What does the <code>extends</code> keyword do in a class definition?",
-      options: [
-        "It adds more methods to an existing instance",
-        "It creates a child class that inherits all properties and methods from the parent class",
-        "It copies the parent class into the child file",
-        "It allows two classes to merge into one"
-      ],
-      answer: 1,
-      explanation: "<code>class Dog extends Animal</code> makes <code>Dog</code> inherit everything from <code>Animal</code>. Dog instances can use Animal's methods without redefining them."
-    },
-    {
-      unit: "WEB107 · OOP in JavaScript",
-      question: "Why must you call <code>super()</code> first in a child class constructor?",
-      options: [
-        "To import the parent class file",
-        "Because using <code>this</code> before <code>super()</code> throws an error — <code>super()</code> sets up the parent portion of the object first",
-        "To override the parent's constructor",
-        "To prevent the parent class from running its own code"
-      ],
-      answer: 1,
-      explanation: "If a child class has a constructor, JavaScript requires <code>super()</code> to be called before <code>this</code> is used. It runs the parent's constructor, setting up the inherited properties."
-    },
-    {
-      unit: "WEB107 · OOP in JavaScript",
-      question: "What is method overriding in inheritance?",
-      options: [
-        "Deleting a method from the parent class",
-        "A child class defining a method with the same name as the parent, replacing the parent's version",
-        "Calling a method with the wrong number of arguments",
-        "Making a method run twice for each instance"
-      ],
-      answer: 1,
-      explanation: "When a child class defines a method with the same name as the parent, the child's version takes priority. The parent's version can still be accessed via <code>super.methodName()</code>."
-    },
-    {
-      unit: "WEB107 · OOP in JavaScript",
-      question: "What does <code>instanceof</code> check?",
-      options: [
-        "Whether a variable is of a specific primitive type",
-        "Whether an object was created from a specific class or any of its parent classes",
-        "Whether a class has been instantiated at all",
-        "Whether two instances are identical"
-      ],
-      answer: 1,
-      explanation: "<code>rex instanceof Dog</code> is <code>true</code>. Because <code>Dog extends Animal</code>, <code>rex instanceof Animal</code> is also <code>true</code>. A child instance is also an instance of all parent classes."
-    },
-    {
-      unit: "WEB107 · OOP in JavaScript",
-      question: "What is a getter in a JavaScript class?",
-      options: [
-        "A method that sets a property value with validation",
-        "A method defined with <code>get</code> that is accessed like a property (no parentheses) and can compute a value on demand",
-        "A static method that returns the class name",
-        "A constructor parameter with a default value"
-      ],
-      answer: 1,
-      explanation: "Getters use the <code>get</code> keyword: <code>get letterGrade() { ... }</code>. You access them like properties — <code>alice.letterGrade</code> not <code>alice.letterGrade()</code>. They can compute values dynamically."
-    },
-    {
-      unit: "WEB107 · OOP in JavaScript",
-      question: "In the school system example, why is <code>average</code> implemented as a getter rather than a regular property?",
-      options: [
-        "Because getters are faster than regular properties",
-        "So the average is always calculated fresh from current grades — instead of being stored and potentially going stale",
-        "Because regular properties cannot hold numeric values",
-        "Because getters are required when using <code>extends</code>"
-      ],
-      answer: 1,
-      explanation: "If <code>average</code> were stored as a property, it would go out of date when grades are added. As a getter, it recalculates from <code>this._grades</code> each time it is accessed — always accurate."
-    }
-  
-  ];
+// ══ WEB101 ══
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"What does HTML stand for?",options:["HyperText Markup Language","HyperText Making Language","High Transfer Markup Language","HyperType Markup Language"],answer:0,explanation:"HTML stands for HyperText Markup Language — the language used to define the structure and content of web pages."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"Which tag is used to create the largest heading on a page?",options:["&lt;h6&gt;","&lt;heading&gt;","&lt;h1&gt;","&lt;title&gt;"],answer:2,explanation:"<code>&lt;h1&gt;</code> is the largest and most important heading. There should only be one <code>&lt;h1&gt;</code> per page — it defines the main topic."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"Which tag creates a paragraph of text?",options:["&lt;text&gt;","&lt;p&gt;","&lt;para&gt;","&lt;body&gt;"],answer:1,explanation:"<code>&lt;p&gt;</code> defines a paragraph. The browser adds spacing above and below it automatically."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"What does a self-closing tag mean?",options:["A tag that closes itself after 5 seconds","A tag with no content — it does its job with a single tag and needs no closing tag","A tag that automatically deletes surrounding elements","A tag only usable inside &lt;head&gt;"],answer:1,explanation:"Self-closing (void) elements like <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;input&gt;</code> have no content and therefore no closing tag."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"Which of these is a self-closing HTML tag?",options:["&lt;div&gt;","&lt;section&gt;","&lt;br&gt;","&lt;article&gt;"],answer:2,explanation:"<code>&lt;br&gt;</code> is a void element — it inserts a line break and has no closing tag."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"What does the <code>&lt;title&gt;</code> tag do?",options:["Displays a large title on the page","Sets the text shown on the browser tab","Creates a tooltip on hover","Defines the main heading of the document"],answer:1,explanation:"<code>&lt;title&gt;</code> lives inside <code>&lt;head&gt;</code> and sets the browser tab text — it is NOT displayed on the page itself."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"Which HTML element contains content NOT visible to the user?",options:["&lt;body&gt;","&lt;main&gt;","&lt;head&gt;","&lt;section&gt;"],answer:2,explanation:"<code>&lt;head&gt;</code> holds metadata — title, charset, viewport, stylesheet links — that the browser uses but does not display."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"How do you write an HTML comment?",options:["// This is a comment","/* This is a comment */","&lt;!-- This is a comment --&gt;","# This is a comment"],answer:2,explanation:"HTML comments use <code>&lt;!-- text --&gt;</code>. The browser ignores them completely."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"Which tag creates an unordered (bullet point) list?",options:["&lt;ol&gt;","&lt;list&gt;","&lt;ul&gt;","&lt;li&gt;"],answer:2,explanation:"<code>&lt;ul&gt;</code> (unordered list) creates bullet points. <code>&lt;ol&gt;</code> creates a numbered list. Both use <code>&lt;li&gt;</code> for each item."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"What attribute is required on every <code>&lt;img&gt;</code> tag for accessibility?",options:["src","href","alt","title"],answer:2,explanation:"<code>alt</code> provides a text description for screen readers and shows when the image fails to load. Never omit it."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"Which element is used to create a clickable hyperlink?",options:["&lt;link&gt;","&lt;href&gt;","&lt;a&gt;","&lt;nav&gt;"],answer:2,explanation:"<code>&lt;a&gt;</code> (anchor) creates a hyperlink. The destination is set with the <code>href</code> attribute."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"What does <code>&lt;strong&gt;</code> do to text?",options:["Makes text italic","Makes text bold and signals importance to screen readers","Underlines text","Changes text colour to red"],answer:1,explanation:"<code>&lt;strong&gt;</code> renders text in bold AND tells screen readers the content is important."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"What must every valid HTML5 document begin with?",options:["&lt;html&gt;","&lt;head&gt;","&lt;!DOCTYPE html&gt;","&lt;meta charset&gt;"],answer:2,explanation:"<code>&lt;!DOCTYPE html&gt;</code> must be the very first line — it tells the browser to use HTML5 standards mode."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"Which attribute opens a link in a new browser tab?",options:["tab=\"new\"","open=\"tab\"","target=\"_blank\"","href=\"_new\""],answer:2,explanation:"<code>target=\"_blank\"</code> tells the browser to open the link in a new tab or window."},
+{unit:"WEB101 · HTML",difficulty:"Easy",question:"What does <code>&lt;hr&gt;</code> render on a page?",options:["A highlighted row","A horizontal dividing line","A header region","A hidden reference"],answer:1,explanation:"<code>&lt;hr&gt;</code> is a self-closing element that renders a horizontal rule — a visual divider between sections."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What is the correct nesting rule for HTML elements?",options:["Any element can go inside any other element","The last tag opened must be the first one closed","Closing tags are optional in HTML5","Parent elements must have fewer children than grandchildren"],answer:1,explanation:"Nesting works like brackets: <code>&lt;outer&gt;&lt;inner&gt;&lt;/inner&gt;&lt;/outer&gt;</code>. Overlapping tags produce broken HTML."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"Which meta tag is required for responsive design to work on mobile browsers?",options:["&lt;meta name=\"mobile\" content=\"yes\"&gt;","&lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;","&lt;meta name=\"responsive\" content=\"true\"&gt;","&lt;meta charset=\"UTF-8\"&gt;"],answer:1,explanation:"The viewport meta tag tells mobile browsers to use the device's real width. Without it, media queries don't fire correctly."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What is the difference between <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code>?",options:["They are identical","&lt;div&gt; is a block-level container; &lt;span&gt; is an inline container","&lt;span&gt; can only hold text","&lt;div&gt; is for CSS only"],answer:1,explanation:"<code>&lt;div&gt;</code> is a block element — starts on a new line and takes full width. <code>&lt;span&gt;</code> is inline — flows within text."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What does <code>charset=\"UTF-8\"</code> do?",options:["Sets the page language to English","Defines the character encoding so almost all characters worldwide display correctly","Links to an external font file","Sets the page background colour"],answer:1,explanation:"UTF-8 supports virtually all human languages and symbols. Without it, special characters may display as garbled text."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What is the difference between <code>&lt;ul&gt;</code> and <code>&lt;dl&gt;</code>?",options:["They are the same","&lt;ul&gt; is an unordered list; &lt;dl&gt; is a description list of term-definition pairs using &lt;dt&gt; and &lt;dd&gt;","&lt;dl&gt; creates bullet points","&lt;ul&gt; is for links"],answer:1,explanation:"<code>&lt;dl&gt;</code> uses <code>&lt;dt&gt;</code> for terms and <code>&lt;dd&gt;</code> for definitions — a glossary structure. <code>&lt;ul&gt;</code> is a general bullet list."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What does <code>method=\"POST\"</code> on a form do differently from <code>method=\"GET\"</code>?",options:["POST encrypts data; GET does not","POST sends data in the request body (not visible in URL); GET appends data to the URL","POST is faster","There is no difference"],answer:1,explanation:"<code>GET</code> appends data to the URL — visible and bookmarkable. <code>POST</code> sends data in the body — hidden, used for sensitive or large data."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What is the purpose of the <code>&lt;label&gt;</code> element and its <code>for</code> attribute?",options:["It styles the input field","It links to the input by matching the input's id, making the label clickable and improving accessibility","It sets placeholder text","It validates the input value"],answer:1,explanation:"<code>&lt;label for=\"inputId\"&gt;</code> links to <code>&lt;input id=\"inputId\"&gt;</code>. Clicking the label focuses the input. Screen readers use this pairing."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What is the difference between <code>&lt;input type=\"radio\"&gt;</code> and <code>&lt;input type=\"checkbox\"&gt;</code>?",options:["Radio allows multiple selections; checkboxes allow only one","Checkboxes allow multiple selections; radio buttons in the same name group allow only one","They are identical","Radio buttons submit as arrays"],answer:1,explanation:"Radio buttons in the same <code>name</code> group are mutually exclusive. Checkboxes are independent — multiple can be checked."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What happens when you use an <code>&lt;iframe&gt;</code> on a page?",options:["It imports external CSS","It embeds another web page inside the current page","It creates a new browser tab","It creates an inline frame only shown on mobile"],answer:1,explanation:"<code>&lt;iframe&gt;</code> embeds another HTML document. Commonly used to embed YouTube videos with the embed URL as src."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What is the role of the <code>action</code> attribute on a <code>&lt;form&gt;</code>?",options:["Defines the visual behaviour on submit","The URL where form data is sent when submitted","Validates the form before submission","Sets the HTTP method"],answer:1,explanation:"<code>action=\"/submit\"</code> tells the browser which URL to send form data to. If omitted, it defaults to the current page URL."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"Which image format is best for logos and icons because it scales perfectly at any size?",options:["JPEG","PNG","GIF","SVG"],answer:3,explanation:"SVG (Scalable Vector Graphics) is vector-based — scales to any resolution without blurring. JPEG and PNG are raster formats that blur when scaled up."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What does the <code>required</code> attribute do on a form input?",options:["Adds a red asterisk","Prevents form submission if the field is empty","Makes the field read-only","Sets the field's default value"],answer:1,explanation:"<code>required</code> enables native browser validation. The form won't submit and the browser highlights the empty required field."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What is the correct step-by-step sequence when you type a URL and press Enter?",options:["Browser loads from cache → renders → contacts DNS","DNS lookup → HTTP request → server response → browser parses and renders","Server pushes data → DNS decodes → browser receives","HTTP request → browser renders → DNS lookup"],answer:1,explanation:"1: DNS converts domain to IP. 2: Browser sends HTTP request. 3: Server responds with HTML. 4: Browser parses, fetches CSS/JS, then renders."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What does the <code>download</code> attribute on an <code>&lt;a&gt;</code> tag do?",options:["Opens the file in a new tab","Forces the browser to save the file to disk instead of opening it","Validates the file exists","Compresses the file before download"],answer:1,explanation:"The <code>download</code> attribute saves the linked file. You can provide a custom filename: <code>download=\"report-2024.pdf\"</code>. Only works for same-origin files."},
+{unit:"WEB101 · HTML",difficulty:"Medium",question:"What is the difference between <code>button type=\"submit\"</code> and <code>button type=\"button\"</code>?",options:["They are identical","type=\"submit\" submits the form; type=\"button\" does nothing by default — needs JavaScript","type=\"button\" submits the form","type=\"submit\" is deprecated"],answer:1,explanation:"<code>type=\"submit\"</code> sends form data. <code>type=\"button\"</code> does nothing natively — attach a JavaScript event listener to make it do something."},
+{unit:"WEB101 · HTML",difficulty:"Hard",question:"Why should there be only ONE <code>&lt;h1&gt;</code> per page?",options:["Browsers crash with multiple h1 tags","Multiple h1 causes CSS specificity conflicts","It defines the document's main topic — multiple h1s confuse screen readers and search engines about the page's primary subject","It is only a stylistic convention"],answer:2,explanation:"The <code>&lt;h1&gt;</code> communicates the primary topic to search engines (SEO) and defines the accessibility outline. Multiple h1s signal ambiguous topic."},
+{unit:"WEB101 · HTML",difficulty:"Hard",question:"What is the difference between <code>autoplay</code> and <code>autoplay muted</code> on a <code>&lt;video&gt;</code>?",options:["They behave identically","Most browsers block autoplay with sound — adding muted is required for autoplay to actually work in modern browsers","muted reduces video quality","autoplay muted only works on mobile"],answer:1,explanation:"Browsers block autoplay videos with audio by default to prevent unwanted noise. <code>muted</code> satisfies browser policies, allowing the video to start automatically."},
+{unit:"WEB101 · HTML",difficulty:"Hard",question:"What is semantic HTML and why does it matter?",options:["HTML with extra attributes for performance","Using tags that describe meaning (&lt;article&gt;, &lt;nav&gt;, &lt;aside&gt;) rather than generic &lt;div&gt;s — improving accessibility and SEO","HTML compressed to reduce file size","HTML with inline styles"],answer:1,explanation:"Semantic tags communicate purpose to browsers, screen readers, and search engines — not just appearance."},
+{unit:"WEB101 · HTML",difficulty:"Hard",question:"Why does skipping heading levels (going from &lt;h1&gt; directly to &lt;h4&gt;) break accessibility?",options:["It causes layout errors in older browsers","Screen readers navigate by heading hierarchy — skipping levels breaks the document outline, making navigation confusing for visually impaired users","It violates CSS cascade rules","Heading styles get overridden automatically"],answer:1,explanation:"Screen readers present a heading outline and let users jump between headings. Skipping from h1 to h4 implies missing structure — confusing navigation."},
+{unit:"WEB101 · HTML",difficulty:"Hard",question:"How do you create an in-page anchor link to a specific section?",options:["Use target=\"_same\" on the anchor","Use &lt;a href=\"#section-id\"&gt; and id=\"section-id\" on the target element","Use a &lt;form&gt; with action pointing to the section","Use window.scrollTo() — HTML alone cannot do this"],answer:1,explanation:"In-page links use a hash: <code>href=\"#contact\"</code> jumps to the element with <code>id=\"contact\"</code>. The browser scrolls to that element."},
+{unit:"WEB101 · HTML",difficulty:"Hard",question:"What is the difference between <code>type=\"email\"</code> and <code>type=\"text\"</code> on an input?",options:["They are identical","type=\"email\" validates email format before submission and shows an email keyboard on mobile","type=\"email\" automatically sends the value to an email server","type=\"email\" encrypts the input"],answer:1,explanation:"<code>type=\"email\"</code> adds built-in format validation (must contain @) and triggers a mobile keyboard optimised for email input."},
+{unit:"WEB101 · HTML",difficulty:"Hard",question:"Why does the <code>download</code> attribute only work for same-origin files?",options:["It is a browser bug","Cross-origin downloads would allow malicious sites to force-download files from any server — browsers block this as a security measure","It requires a special header","download is only supported in Chrome"],answer:1,explanation:"Browsers restrict <code>download</code> to same-origin files for security. Cross-origin files must set the <code>Content-Disposition: attachment</code> header server-side."},
+{unit:"WEB101 · HTML",difficulty:"Hard",question:"What is the HTTP client-server model?",options:["The browser is the server; the website is the client","The browser (client) sends requests; a remote computer (server) stores and returns files; the browser renders what it receives","Both browser and server store identical copies","The server renders HTML and streams pixels"],answer:1,explanation:"Your browser is the client — sends HTTP requests. A web server holds files and sends them back. The browser then parses and renders them into the page you see."},
+{unit:"WEB101 · HTML",difficulty:"Hard",question:"What does <code>&lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;</code> actually do?",options:["Sets the page to exactly 1000px wide","Prevents zooming on mobile","Tells mobile browsers to use the device's actual width instead of simulating a desktop viewport — without it, media queries won't fire correctly","Improves SEO ranking"],answer:2,explanation:"Without the viewport meta tag, mobile browsers assume a wide desktop viewport and scale down the page, making media queries useless."},
+{unit:"WEB101 · HTML",difficulty:"Hard",question:"What is DNS and what happens during a DNS lookup?",options:["Dynamic Node Server — manages backend connections","Domain Name System — converts human-readable domain names to IP addresses before a browser can make an HTTP request","Direct Network Signal — routes packets","Data Network Standard — encrypts traffic"],answer:1,explanation:"DNS is the internet's phone book. When you type <code>google.com</code>, your computer asks DNS: 'what is the IP for google.com?' and gets back something like <code>142.250.80.46</code> to connect to."},
+
+// ══ WEB102 ══
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"What is Git?",options:["A website for hosting code","A distributed version control system that tracks changes to your files on your computer","A programming language","A cloud storage service"],answer:1,explanation:"Git is a free, open-source version control tool installed on your computer. It tracks every change, lets you save snapshots, revert mistakes, and collaborate."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"What is GitHub?",options:["The company that made Git","A website that hosts Git repositories in the cloud for backup and collaboration","A Git command for sharing files","An IDE for writing code"],answer:1,explanation:"GitHub (owned by Microsoft) stores Git repositories online, enabling backup, collaboration, code review, and free hosting via GitHub Pages."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"Which command checks the status of your working tree and staging area?",options:["git log","git check","git status","git info"],answer:2,explanation:"<code>git status</code> shows modified, staged, and untracked files. Run it constantly — before every add and commit."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"Which command creates a new Git repository in the current folder?",options:["git start","git create","git new","git init"],answer:3,explanation:"<code>git init</code> turns the current folder into a Git repository by creating a hidden <code>.git</code> folder that stores all version history."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"Which command stages ALL changed files?",options:["git commit -a","git add all","git add .","git stage"],answer:2,explanation:"<code>git add .</code> stages every changed file in the current directory and subfolders, moving them to the Staging Area ready for a commit."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"Which command saves a staged snapshot with a message?",options:["git save -m \"msg\"","git commit -m \"msg\"","git push -m \"msg\"","git add -m \"msg\""],answer:1,explanation:"<code>git commit -m \"message\"</code> saves a permanent snapshot of staged changes to repository history. The message should briefly describe what changed."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"Which command uploads your local commits to GitHub?",options:["git upload","git send","git push","git sync"],answer:2,explanation:"<code>git push</code> uploads your local commits to the remote repository on GitHub. Commit first, then push to back up and share your work."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"Which command downloads the latest commits from GitHub and merges them?",options:["git download","git fetch","git pull","git sync"],answer:2,explanation:"<code>git pull</code> fetches the latest commits from GitHub AND merges them into your current branch. Run it at the start of each session when collaborating."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"What is a Git repository?",options:["A GitHub profile page","A folder tracked by Git — containing your project files and a hidden .git folder with full history","A commit message","A branch name"],answer:1,explanation:"A repository is a Git-tracked project folder. The hidden <code>.git</code> subfolder is Git's database — stores every snapshot, branch, and config."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"What command shows the commit history in a compact one-line format?",options:["git history","git show","git log --oneline","git list"],answer:2,explanation:"<code>git log --oneline</code> shows each commit on one line with its short hash and message — much easier to scan than the full <code>git log</code>."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"What does <code>git clone URL</code> do?",options:["Creates an empty repository","Downloads a complete copy of a repository from GitHub to your computer","Pushes your local code to GitHub","Creates a new branch"],answer:1,explanation:"<code>git clone</code> downloads the full repository — all files, branches, and history — and automatically sets up the remote connection."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"Which command lists all local branches?",options:["git branches","git list","git branch","git show-branch"],answer:2,explanation:"<code>git branch</code> lists all local branches with an asterisk (*) marking the currently active one."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"Which command creates AND switches to a new branch in one step?",options:["git branch new-feature","git checkout -b new-feature","git switch -c new-feature","git create new-feature"],answer:2,explanation:"<code>git switch -c branch-name</code> creates and switches in one command (introduced in Git 2.23). <code>-c</code> stands for create."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"What is the main branch?",options:["A branch for hotfixes only","The default primary branch where production-ready code lives","The oldest branch in the repository","A remote-only branch"],answer:1,explanation:"The <code>main</code> branch (formerly <code>master</code>) is the default branch created with <code>git init</code>. By convention it holds stable, deployable code."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Easy",question:"What does <code>git remote -v</code> show?",options:["All commit messages","The list of remote repositories your local repo is connected to and their URLs","All branches on GitHub","Your Git configuration settings"],answer:1,explanation:"<code>git remote -v</code> shows the name and URL of connected remotes. <code>origin</code> is the conventional name for the primary GitHub remote."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What are the three areas of Git and how does code flow between them?",options:["Local, Remote, Archive","Working Tree → Staging Area → Repository — via git add then git commit","Inbox, Outbox, Sent","Draft, Review, Published"],answer:1,explanation:"Edit files in the Working Tree, stage with <code>git add</code>, permanently save to the Repository (the <code>.git</code> folder) with <code>git commit</code>."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What is a commit hash?",options:["A password protecting the commit","A unique identifier automatically generated for every commit — used to reference specific snapshots in commands like git revert","A short tag you manually assign","The commit message compressed"],answer:1,explanation:"Every commit gets a unique SHA-1 hash (e.g. <code>88ee21b</code>). This ID references that exact snapshot in <code>git revert</code>, <code>git reset</code>, <code>git show</code>, etc."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What is a Git branch and why is branching used?",options:["A copy of the repository on a different server","An independent line of development — work on features without affecting the main branch, then merge when done","A backup of a specific commit","A label on a pull request"],answer:1,explanation:"Branches let you safely experiment or build features in isolation. When finished and tested, merge the branch back into <code>main</code>. Every professional team uses branching."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What is the difference between <code>git add filename</code> and <code>git add .</code>?",options:["There is no difference","git add filename stages only that file; git add . stages all changed files in the current folder","git add . creates a new branch","git add filename is faster"],answer:1,explanation:"Use <code>git add filename</code> to commit only specific changes. Use <code>git add .</code> when all your changes should go into the next commit."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What is the difference between <code>git fetch</code> and <code>git pull</code>?",options:["git fetch downloads AND merges; git pull only downloads","git pull downloads AND merges; git fetch only downloads without merging — lets you review first","They are identical","git fetch works for private repos only"],answer:1,explanation:"<code>git fetch</code> updates remote-tracking branches but does NOT touch working files. <code>git pull</code> = <code>git fetch</code> + <code>git merge</code>."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What is a merge conflict and when does it happen?",options:["When you push to a branch you don't own","When two branches modified the same line differently — Git cannot auto-decide which version to keep","When a commit message is blank","When a branch has too many commits"],answer:1,explanation:"Git marks conflicts with <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. You edit the file to keep what you want, delete markers, then commit the resolution."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What is GitHub Pages?",options:["A paid enterprise tool","A free static site hosting service that publishes your repository as a live website — requires index.html at the root and Pages enabled in Settings","A GitHub plugin for databases","A tool for previewing branches"],answer:1,explanation:"GitHub Pages turns your repository into a live website. Requirements: public repo (free plan), <code>index.html</code> at root, Pages enabled in repo Settings → Pages."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What is the correct daily workflow for pushing to a shared GitHub repository?",options:["git push → git commit → git add → edit","git pull → edit → git add . → git commit → git push","git clone → git push → done","git init → git commit → git push"],answer:1,explanation:"Always <code>git pull</code> first to get teammates' latest changes. Edit files, stage, commit with a message, then <code>git push</code> to share."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What are the two GitHub authentication methods and which is recommended long-term?",options:["Password and fingerprint — fingerprint recommended","HTTPS with a Personal Access Token (PAT) and SSH keys — SSH recommended long-term for convenience","Username/password and OAuth","HTTP and HTTPS"],answer:1,explanation:"GitHub removed password auth in 2021. HTTPS + PAT works but tokens expire. SSH keys — once set up — never expire and require no credentials to type again."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What does <code>git log --oneline --graph --all</code> show?",options:["Only the most recent commit","A compact visual of the entire commit history including all branches with ASCII branch lines","All uncommitted changes","All remote repositories"],answer:1,explanation:"<code>--oneline</code> compresses to one line, <code>--graph</code> draws ASCII branch lines, <code>--all</code> shows every branch — a complete visual history."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What is the difference between <code>git revert</code> and <code>git reset</code>?",options:["They are identical","git revert creates a new commit that undoes changes (safe for shared repos); git reset rewrites history (dangerous on shared branches)","git reset is safer","git revert only works on the latest commit"],answer:1,explanation:"<code>git revert</code> adds a new commit — history preserved, safe for shared branches. <code>git reset</code> removes commits from history — never use <code>--hard</code> on shared branches."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What does the <code>--global</code> flag do in <code>git config --global</code>?",options:["Uploads the setting to GitHub","Applies the setting to all Git repositories on your computer — set it once after installing Git","Makes the setting visible to other users","Sets config on the remote server"],answer:1,explanation:"<code>--global</code> stores the setting in <code>~/.gitconfig</code> — applies to all repos on your machine. Without it, the setting only applies to the current repo."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"After merging a feature branch into main, what should you do with it?",options:["Rename it to archive","Leave it permanently","Delete it with git branch -d feature-name to keep the repo clean","Push it to a separate remote"],answer:2,explanation:"Once merged, a feature branch has served its purpose. <code>git branch -d branch-name</code> deletes it locally. Use <code>-D</code> to force-delete unmerged branches."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What does <code>git merge feature-login</code> do when on the main branch?",options:["Deletes the feature-login branch","Integrates all commits from feature-login into main — creating a new merge commit if histories have diverged","Renames main to feature-login","Copies main into feature-login"],answer:1,explanation:"<code>git merge</code> combines the histories of two branches. Run it from the receiving branch (<code>main</code>) — it brings in all of <code>feature-login</code>'s commits."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Hard",question:"What is the difference between <code>git reset --soft HEAD~1</code> and <code>git reset --hard HEAD~1</code>?",options:["--soft is faster","--soft removes the last commit but keeps file changes staged; --hard removes the commit AND discards all file changes permanently","--hard is safer for shared branches","They produce identical results"],answer:1,explanation:"<code>--soft</code>: commit gone, changes still staged — useful to recommit with a better message. <code>--hard</code>: commit AND file changes destroyed permanently. No undo."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Hard",question:"Why should you NEVER use <code>git reset --hard</code> on a pushed branch?",options:["GitHub rejects hard resets","It rewrites history — your local branch diverges from remote, and a force push would overwrite teammates' work and destroy shared commit history","It only affects files, not history","GitHub Pages stops working"],answer:1,explanation:"Once commits are shared (pushed), rewriting history with <code>--hard</code> then force-pushing (<code>git push -f</code>) replaces everyone's history. Use <code>git revert</code> instead."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Hard",question:"How does SSH key authentication work for GitHub?",options:["Your password is encrypted on GitHub's servers","You generate a key pair — private key on your machine, public key on GitHub. When pushing, GitHub verifies your private key matches the stored public key — no password needed","SSH sends your token over encrypted tunnel","GitHub stores a session cookie"],answer:1,explanation:"SSH uses asymmetric cryptography. The private key never leaves your machine. GitHub checks if your private key mathematically matches the uploaded public key."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Hard",question:"What does <code>git push -u origin main</code> do differently from <code>git push</code>?",options:["It is faster","The -u flag sets the upstream tracking relationship — future git push and git pull work without specifying remote/branch","It creates a -u branch on GitHub","It pushes all branches"],answer:1,explanation:"<code>-u</code> (or <code>--set-upstream</code>) links your local branch to the remote branch. After this once, plain <code>git push</code> and <code>git pull</code> work without arguments."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Hard",question:"Why does GitHub Pages require lowercase filenames?",options:["Uppercase is blocked by the API","GitHub Pages runs on Linux servers which are case-sensitive — Photo.jpg and photo.jpg are different files. Works locally (Windows/macOS case-insensitive) but breaks on the live Linux server","Uppercase causes CDN issues","GitHub strips uppercase during upload"],answer:1,explanation:"Windows/macOS file systems are case-insensitive locally. Linux is case-sensitive. Mismatched cases break images/scripts on the live GitHub Pages server even though everything works locally."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Hard",question:"What is a Personal Access Token (PAT) and why did GitHub replace passwords with them?",options:["A shorter version of your password","Passwords give full account access if leaked. PATs are scoped tokens (repo access only, expiry dates) that can be revoked individually without changing your password","Required for public repos only","PATs support two-factor authentication only"],answer:1,explanation:"PATs are scoped (grant only needed permissions), have expiry dates, and can be individually revoked. A compromised PAT is contained; a compromised password exposes your entire account."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Hard",question:"What exactly is stored inside the hidden <code>.git</code> folder?",options:["Only the latest version of files","A ZIP of your project at last commit","Git's entire database: all commits, branches, staging index, config, and remote tracking info — the complete project history","A log of terminal commands"],answer:2,explanation:"The <code>.git</code> folder contains objects (commits, trees, blobs), refs (branches, tags), the index (staging area), config, and remote info. Delete it and all history is gone."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Hard",question:"You want to undo changes to a file you have NOT yet staged. Which command is correct?",options:["git undo filename","git restore filename","git reset filename","git revert filename"],answer:1,explanation:"<code>git restore filename</code> discards working tree changes, reverting the file to the last committed state. Use <code>git restore --staged filename</code> to unstage a staged file."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Hard",question:"Why do we write commit messages in present tense ('Add login form' not 'Added login form')?",options:["It is a GitHub requirement","It reads as an instruction — 'applying this commit will add a login form' — matching how Git itself describes commits and making changelogs easier to scan","It matches JavaScript naming","It is purely stylistic"],answer:1,explanation:"Present tense reads like instructions. <code>git log</code> reads better as a list of actions: 'Add form', 'Fix bug', 'Update README'. Aligns with Git's own messages ('Merge branch...')."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Hard",question:"What would happen if you ran <code>git merge feature</code> on main with uncommitted changes that could conflict?",options:["Git merges automatically","Git refuses to merge if uncommitted changes could conflict with the incoming merge — protecting your work. Commit or stash first","Git deletes the staged changes","Changes move to the feature branch"],answer:1,explanation:"Git protects your uncommitted work. If changes could conflict with the merge, it aborts and tells you to commit or stash (<code>git stash</code>) first."},
+{unit:"WEB102 · Git & GitHub",difficulty:"Medium",question:"What does <code>git diff</code> show and when is it useful?",options:["Shows all committed files","Shows the exact line-by-line changes in files that have been modified but not yet staged — useful for reviewing what you changed before running git add","Shows differences between two branches","Shows the diff between local and remote"],answer:1,explanation:"<code>git diff</code> shows unstaged changes. Use <code>git diff --staged</code> to see what is already staged and about to be committed. Review before every commit to catch mistakes."},
+
+// ══ WEB103 ══
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"What does CSS stand for?",options:["Creative Styling Syntax","Cascading Style Sheets","Computer Style System","Coded Style Script"],answer:1,explanation:"CSS stands for Cascading Style Sheets — the language used to control the appearance of HTML elements."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"In a CSS rule, what is the part inside <code>{ }</code> called?",options:["The selector","The declaration block","The value","The class"],answer:1,explanation:"The curly braces contain the declaration block — one or more property/value pairs defining the styles applied to the selected element."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"Which CSS property changes text colour?",options:["font-color","text-color","color","foreground"],answer:2,explanation:"<code>color</code> sets text colour. Common values: named colours (<code>red</code>), hex codes (<code>#E63946</code>), and <code>rgb()</code> values."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"Which CSS property sets the background colour of an element?",options:["color","bg-color","background","background-color"],answer:3,explanation:"<code>background-color</code> sets the element's background. <code>background</code> is the shorthand that also accepts images, gradients, and more."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"Which selector targets ALL elements on the page?",options:["body","all","*","@global"],answer:2,explanation:"The universal selector <code>*</code> targets every element. Used in resets: <code>* { box-sizing: border-box; margin: 0; padding: 0; }</code>."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"How do you target an element with <code>class=\"card\"</code> in CSS?",options:["card { }","#card { }",".card { }","@card { }"],answer:2,explanation:"Class selectors use a dot prefix: <code>.card { }</code>. Multiple elements can share the same class. Most commonly used selector type."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"How do you target an element with <code>id=\"header\"</code> in CSS?",options:[".header { }","header { }","#header { }","id-header { }"],answer:2,explanation:"ID selectors use a hash prefix: <code>#header { }</code>. An ID must be unique on the page — only one element should have a given id."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"What does the <code>margin</code> property control?",options:["Space inside the border","Space outside the element that pushes other elements away","The border thickness","The element's width"],answer:1,explanation:"Margin is the outermost box model layer — it creates space outside the border, pushing surrounding elements away."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"What does the <code>padding</code> property control?",options:["Space outside the element","Space inside the border between the border and content","The border thickness","The font size"],answer:1,explanation:"Padding creates space inside the border — between the border and the content. It is part of the element's background area."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"Which property adds rounded corners to an element?",options:["corner-radius","rounded","border-radius","curve-border"],answer:2,explanation:"<code>border-radius</code> rounds the corners. <code>8px</code> = subtle; <code>50%</code> = circle; <code>9999px</code> = pill shape."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"What does <code>display: none</code> do?",options:["Makes it invisible but keeps its space","Removes it from the page — it takes up no space","Moves it off-screen","Changes opacity to 0"],answer:1,explanation:"<code>display: none</code> removes the element from layout completely — not rendered at all. Use <code>visibility: hidden</code> to keep the space."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"What is the recommended method for adding CSS to a real project?",options:["Inline styles on each element","A &lt;style&gt; tag in the body","An external stylesheet linked with &lt;link&gt; in &lt;head&gt;","Embedding CSS in JavaScript"],answer:2,explanation:"External stylesheets separate concerns, are reusable across pages, and are easier to maintain."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"Which CSS property controls the size of text?",options:["text-size","font","font-size","size"],answer:2,explanation:"<code>font-size</code> sets the text size. Common values: <code>16px</code>, <code>1rem</code>, <code>1.5em</code>. Use <code>rem</code> for accessibility."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"What does <code>text-align: center</code> do?",options:["Centers the element on the page","Centers text content within its container","Adds equal padding to both sides","Aligns the element to the browser center"],answer:1,explanation:"<code>text-align: center</code> horizontally centres text inside its container. To centre a block element, use <code>margin: 0 auto</code>."},
+{unit:"WEB103 · CSS",difficulty:"Easy",question:"Which CSS pseudo-class activates when you hover over an element?",options:[":active",":focus",":hover",":visited"],answer:2,explanation:"<code>:hover</code> targets an element while the mouse cursor is over it. Used for navigation colour changes and button hover effects."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What is CSS specificity?",options:["The order stylesheets load","A scoring system: inline (1000) > ID (100) > class (10) > element (1). Highest score wins when rules conflict","Number of declarations in a rule","Alphabetical order of property names"],answer:1,explanation:"When multiple rules target the same element, the highest specificity score wins. Equal scores: the last rule in source order wins."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"Which CSS properties are inherited by children by default?",options:["border, margin, padding","width, height, display","color, font-family, line-height","background-color, border-radius, padding"],answer:2,explanation:"Text-related properties like <code>color</code>, <code>font-family</code>, and <code>line-height</code> inherit. Layout properties like <code>border</code>, <code>margin</code>, <code>padding</code> do NOT."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What does <code>box-sizing: border-box</code> change about sizing?",options:["Adds an automatic border to every element","The declared width includes padding and border — they don't add on top","Makes all elements the same width","Removes the margin from the box model"],answer:1,explanation:"Without <code>border-box</code>, padding and border add to the declared width. With it, the stated width IS the total width — far more predictable."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What is the key difference between Flexbox and Grid?",options:["Flex is for images; grid is for text","Flex layouts in one direction (row OR column); grid layouts in two dimensions (rows AND columns)","Grid is older and less supported","They are identical"],answer:1,explanation:"Flexbox is one-dimensional — ideal for navbars, centering. Grid is two-dimensional — ideal for full page layouts, card grids, galleries."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What does <code>justify-content: space-between</code> do in Flexbox?",options:["Centers all items","Places equal space around every item","First item at start, last at end, equal gaps between the rest — no outer gaps","Pushes all items to the right"],answer:2,explanation:"<code>space-between</code>: first item at flex-start, last at flex-end, equal gaps between. Perfect for navbars (logo left, links right)."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What does <code>flex: 1</code> on a flex item mean?",options:["The item is exactly 1px wide","The item grows to fill all available space, shared equally with other flex:1 siblings","The item shrinks to nothing","The item becomes the first child"],answer:1,explanation:"<code>flex: 1</code> is shorthand for grow:1 shrink:1 basis:0. The item expands to fill remaining space and shares it equally with other <code>flex: 1</code> siblings."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What does <code>grid-template-columns: 1fr 2fr 1fr</code> create?",options:["Three equal columns","Three columns where the middle is twice as wide as the outer two","A column that repeats 3 times","Three rows"],answer:1,explanation:"Total = 4fr. Left = 1/4, middle = 2/4, right = 1/4 of available width. The <code>fr</code> unit distributes fractional shares of space."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What does <code>grid-column: 1 / -1</code> do?",options:["Places item in column -1 only","Moves the item off-screen","Makes the item span from the first to the last column line — full width","Hides the item"],answer:2,explanation:"<code>-1</code> means the last grid line. <code>1 / -1</code> spans from the first line to the last — occupying the entire row width."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What does <code>@media (min-width: 768px)</code> do?",options:["Applies styles when screen is LESS than 768px","Applies styles ONLY when viewport is 768px or wider","Loads a different stylesheet","Sets minimum font size to 768px"],answer:1,explanation:"<code>min-width: 768px</code> styles activate when the viewport is at least 768px wide. This is mobile-first — write base styles for mobile, enhance for larger screens."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What is a CSS custom property (variable) and how is it declared?",options:["A variable imported from JavaScript","A value with a double-dash prefix in :root, used anywhere with var(--name)","A reusable class that auto-generates CSS","A browser extension"],answer:1,explanation:"Declare: <code>:root { --color-primary: #1A3C5E; }</code>. Use: <code>color: var(--color-primary);</code>. Change the variable and every element using it updates."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What does the descendant selector <code>nav a</code> target?",options:["Only &lt;a&gt; tags that are direct children of &lt;nav&gt;","Any &lt;a&gt; nested inside a &lt;nav&gt; at any depth","&lt;nav&gt; elements inside &lt;a&gt;","Both &lt;nav&gt; and &lt;a&gt; separately"],answer:1,explanation:"The descendant selector (space) targets matching elements nested at any depth inside the ancestor. Use <code>nav > a</code> for direct children only."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What does <code>transition: background 0.3s ease</code> do?",options:["Changes background immediately","Animates the background change smoothly over 0.3s when it changes (e.g. on hover)","Loops a background animation","Sets all transition speeds to 0.3"],answer:1,explanation:"<code>transition</code> smoothly animates property changes between states. When background changes on hover, it animates over 0.3s with the <code>ease</code> timing curve."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What is <code>line-height</code> and what is a good value for body text?",options:["Height of a text character — typically 12","Vertical space between lines — 1.5 to 1.6 is comfortable for body text","Height of the element's border","Distance between letters"],answer:1,explanation:"<code>line-height</code> controls spacing between lines. Unitless values like <code>1.6</code> are preferred — they scale proportionally with the font size."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What does <code>grid-template-areas</code> let you do?",options:["Create animated grid transitions","Name regions of a grid in a text map, then assign children with grid-area: name","Define row and column counts","Create responsive grids without media queries"],answer:1,explanation:"You define a text map: <code>'header header' 'sidebar main' 'footer footer'</code> then assign: <code>grid-area: header</code>. Self-documenting, readable layouts."},
+{unit:"WEB103 · CSS",difficulty:"Hard",question:"Why is <code>rem</code> preferred over <code>px</code> for accessible font sizes?",options:["rem renders faster","rem is relative to the root font size — if users change their browser's base font size, rem values scale accordingly. px is fixed and ignores user preferences","rem is supported in more browsers","px causes layout shifts"],answer:1,explanation:"Users with low vision may increase their browser's base font size. <code>rem</code> scales with this setting. Fixed <code>px</code> stays the same and can make text too small."},
+{unit:"WEB103 · CSS",difficulty:"Hard",question:"What can <code>@keyframes</code> do that <code>transition</code> cannot?",options:["Animate on hover","Animate multiple properties simultaneously","Define styles at specific percentage points during animation and loop infinitely — enabling complex multi-step animations","Apply to pseudo-elements"],answer:2,explanation:"<code>transition</code> animates between two states only. <code>@keyframes</code> lets you define styles at 0%, 50%, 100% etc., with independent control at each step, and can run infinitely."},
+{unit:"WEB103 · CSS",difficulty:"Hard",question:"Why should you only animate <code>transform</code> and <code>opacity</code> for smooth performance?",options:["Only these support transition","These are the only animatable CSS properties","They trigger only the compositor layer — not layout or paint recalculations — keeping animations smooth at 60fps","They are the only GPU-accelerated properties"],answer:2,explanation:"Animating <code>width</code>, <code>margin</code>, <code>top</code> triggers layout reflow — the browser recalculates all element positions. <code>transform</code> and <code>opacity</code> bypass this, running on the GPU."},
+{unit:"WEB103 · CSS",difficulty:"Hard",question:"How does dark mode theming with CSS variables work without changing every property?",options:["JavaScript swaps the entire stylesheet","Redefine variable values in body.dark — all elements using var(--name) update automatically since they reference the variable, not a hardcoded value","Each element needs its own dark mode override","A separate dark.css file is loaded"],answer:1,explanation:"<code>body.dark { --color-bg: #1A1A2E; }</code> — every element using <code>var(--color-bg)</code> updates automatically. The variable changes; each individual property rule is unchanged."},
+{unit:"WEB103 · CSS",difficulty:"Hard",question:"When two CSS rules have EQUAL specificity, which one applies?",options:["The one written first","The one with more declarations","The one written last in the stylesheet","The class selector always wins"],answer:2,explanation:"The cascade rule: equal specificity = last rule in source order wins. This is why order matters and overrides should come after base styles."},
+{unit:"WEB103 · CSS",difficulty:"Hard",question:"What is the purpose of <code>@media (prefers-reduced-motion: reduce)</code>?",options:["Reduces animation file size","Disables animations for users who enabled 'reduce motion' in their OS — preventing discomfort for users with vestibular disorders","Applies animations only on desktop","Slows all animations to 50%"],answer:1,explanation:"Some users have vestibular disorders where motion causes dizziness. This media query lets you disable animations for those users, honouring their OS accessibility preference."},
+{unit:"WEB103 · CSS",difficulty:"Hard",question:"Why is <code>* { box-sizing: border-box; }</code> considered a fundamental CSS reset?",options:["It removes all browser styles","Ensures declared widths include padding and border rather than adding on top — making layouts predictable and preventing unexpected overflow","Resets all elements to display:block","Removes all margins and padding"],answer:1,explanation:"Without it, <code>width: 300px</code> with <code>padding: 20px</code> is actually 340px wide. <code>border-box</code> makes the stated width the total width — eliminating a common layout bug source."},
+{unit:"WEB103 · CSS",difficulty:"Hard",question:"What is the practical difference between <code>position: relative</code> and <code>position: absolute</code>?",options:["relative is for mobile; absolute for desktop","relative offsets from normal position while keeping its space in document flow; absolute removes the element from flow and positions it relative to the nearest positioned ancestor","absolute is faster to render","relative requires display: flex on parent"],answer:1,explanation:"<code>relative</code>: element stays in flow, other elements respect its space. <code>absolute</code>: removed from flow, positioned relative to the closest parent with non-static position."},
+{unit:"WEB103 · CSS",difficulty:"Hard",question:"What does <code>repeat(auto-fill, minmax(260px, 1fr))</code> achieve in a grid?",options:["Creates exactly 260 columns","Automatically adjusts column count based on screen width — each column minimum 260px, flexible up to equal share — no media queries needed","Sets all rows to 260px","Fills empty cells with placeholder content"],answer:1,explanation:"<code>auto-fill</code> packs as many columns as fit. <code>minmax(260px, 1fr)</code> sets the minimum width. Together they create a fully responsive grid with zero media queries."},
+{unit:"WEB103 · CSS",difficulty:"Hard",question:"What is the difference between pseudo-class selectors and pseudo-element selectors?",options:["They are both pseudo-classes — :: is just older syntax","Pseudo-classes (:hover, :focus, :nth-child) target an element in a specific state; pseudo-elements (::before, ::after) create virtual sub-elements that can be styled","::before is JavaScript; :hover is CSS-only","Pseudo-elements only work on block elements"],answer:1,explanation:"Pseudo-classes target states. Pseudo-elements create virtual parts — <code>::before</code> inserts generated content before the element's content, <code>::after</code> after. They do not exist in the HTML."},
+{unit:"WEB103 · CSS",difficulty:"Medium",question:"What does <code>overflow: hidden</code> do on an element?",options:["Hides the entire element","Clips content that exceeds the element's dimensions — content outside the boundary is not visible and no scrollbar appears","Adds a scrollbar automatically","Moves overflow content below the element"],answer:1,explanation:"<code>overflow: hidden</code> clips content at the element's edge. Use <code>overflow: auto</code> to add scrollbars only when needed, or <code>overflow: scroll</code> to always show them."},
+
+// ══ WEB104 ══
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"Which keyword declares a variable that CANNOT be reassigned?",options:["let","var","const","fixed"],answer:2,explanation:"<code>const</code> declares a constant binding — the variable cannot be reassigned. Use it by default and switch to <code>let</code> only when reassignment is needed."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"Which method prints output to the browser console?",options:["print()","log()","console.log()","alert()"],answer:2,explanation:"<code>console.log()</code> writes to the browser's developer console. It is the primary tool for debugging — open with F12 to see output."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"What are the only two Boolean values in JavaScript?",options:["yes and no","1 and 0","true and false","on and off"],answer:2,explanation:"Booleans have exactly two values: <code>true</code> and <code>false</code>. They control the flow of conditionals and are the result of comparisons."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"How do you write a single-line comment in JavaScript?",options:["<!-- comment -->","/* comment */","// comment","# comment"],answer:2,explanation:"<code>//</code> starts a single-line comment. Everything after it on that line is ignored by the engine. Use <code>/* ... */</code> for multi-line comments."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"Which operator checks if two values are equal in both type AND value?",options:["==","=","===","!="],answer:2,explanation:"<code>===</code> (strict equality) checks both value and type. Always use it instead of <code>==</code>, which performs type coercion and can give unexpected results."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"What does the modulo operator <code>%</code> return?",options:["The quotient of division","The percentage of a number","The remainder after division","The absolute value"],answer:2,explanation:"<code>10 % 3</code> returns <code>1</code> — the remainder after dividing 10 by 3. Commonly used to check if a number is even: <code>n % 2 === 0</code>."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"What is the output of <code>typeof 42</code>?",options:["'number'","'integer'","'float'","'numeric'"],answer:0,explanation:"<code>typeof 42</code> returns the string <code>'number'</code>. JavaScript has a single Number type for all numeric values — both integers and decimals."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"How do you access the second item in <code>const arr = ['a', 'b', 'c']</code>?",options:["arr[2]","arr[1]","arr.second","arr(1)"],answer:1,explanation:"Arrays are zero-indexed — first item is at index 0. So <code>arr[1]</code> returns <code>'b'</code> and <code>arr[0]</code> returns <code>'a'</code>."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"What does <code>arr.push('x')</code> do?",options:["Removes the last item","Adds 'x' to the beginning","Adds 'x' to the END of the array","Returns the index of 'x'"],answer:2,explanation:"<code>push()</code> appends an item to the end of the array and returns the new length. Use <code>unshift()</code> to add to the beginning."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"How do you define a function named <code>greet</code> that takes a <code>name</code> parameter?",options:["func greet(name) { }","def greet(name):","function greet(name) { }","greet = function name() { }"],answer:2,explanation:"JavaScript functions are declared with the <code>function</code> keyword, followed by name, parameters in parentheses, and a body in curly braces."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"What keyword sends a value back from a function?",options:["send","output","yield","return"],answer:3,explanation:"<code>return</code> exits the function and sends a value back to the caller. Code after a <code>return</code> statement in the same block does not execute."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"What does <code>let x; console.log(x)</code> output?",options:["null","0","''","undefined"],answer:3,explanation:"A variable declared with <code>let</code> but not assigned a value is automatically set to <code>undefined</code> by JavaScript."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"What is the <code>switch</code> statement best used for?",options:["Looping through arrays","Comparing one variable against many specific values — cleaner than many else-if blocks","Declaring multiple variables at once","Switching between CSS stylesheets"],answer:1,explanation:"<code>switch</code> compares one expression against multiple <code>case</code> values and is cleaner than a long chain of <code>else if</code> for known specific values."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"What does the logical AND operator <code>&&</code> require to return true?",options:["At least one operand true","Neither operand true","Both operands must be true","Exactly one operand true"],answer:2,explanation:"<code>&&</code> (AND) returns <code>true</code> only when BOTH sides are truthy. <code>||</code> (OR) returns <code>true</code> if at least one side is truthy."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Easy",question:"Which loop always executes its body at least once?",options:["for loop","while loop","do...while loop","for...of loop"],answer:2,explanation:"The <code>do...while</code> loop runs the body FIRST, then checks the condition. Even if the condition is false initially, the body executes once."},
+
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What is the difference between <code>let</code>, <code>const</code>, and <code>var</code>?",options:["They are identical — just different styles","const: block-scoped, no reassignment; let: block-scoped, reassignable; var: function-scoped, has confusing hoisting behaviour — avoid it","var is the modern syntax; let and const are old","const only works for numbers"],answer:1,explanation:"Use <code>const</code> by default (no reassignment), <code>let</code> when you need to change the value, and avoid <code>var</code> — it leaks out of blocks and has unpredictable hoisting behaviour."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What is a template literal and how does it improve on string concatenation?",options:["A string in double quotes that supports multiline","A string in backticks (`) that embeds expressions with ${} and supports multiline — no + concatenation needed","A string compiled into HTML","A constant string"],answer:1,explanation:"<code>`Hello ${name}!`</code> vs <code>'Hello ' + name + '!'</code>. Template literals are cleaner, support multiline without escape characters, and allow any expression inside <code>${}</code>."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What is the difference between <code>null</code> and <code>undefined</code>?",options:["They are identical — interchangeable","undefined: automatically set by JS on unassigned variables; null: intentionally set by a programmer to signal 'no value'","null means a variable has a value; undefined means it does not","undefined is a string type; null is a number"],answer:1,explanation:"JavaScript sets <code>undefined</code> automatically. <code>null</code> is explicit programmer intent: 'this exists but holds no value currently'. Both are falsy."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What does <code>'Hello World'.toUpperCase()</code> return?",options:["'hello world'","'HELLO WORLD'","'Hello World'","true"],answer:1,explanation:"<code>toUpperCase()</code> returns a new string with all characters uppercased. Strings are immutable in JavaScript — the original is not modified."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What is the difference between <code>for...of</code> and <code>for...in</code>?",options:["for...of is for numbers; for...in for letters","for...of iterates over VALUES in arrays/strings; for...in iterates over KEYS in objects","They are interchangeable","for...in is faster"],answer:1,explanation:"<code>for (let fruit of fruits)</code> gives each value. <code>for (let key in student)</code> gives each key name. Never use <code>for...in</code> on arrays — use it only for objects."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What is a default parameter in a function?",options:["A parameter that must always be first","A fallback value used when no argument is passed: function greet(name = 'stranger') {}","A parameter that cannot be overridden","A parameter stored globally"],answer:1,explanation:"<code>function greet(name = 'stranger') {}</code> — calling <code>greet()</code> without arguments uses <code>'stranger'</code>. Passing a value overrides the default."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What is the ternary operator?",options:["A loop that runs three times","Shorthand for if/else: condition ? valueIfTrue : valueIfFalse — best for simple yes/no assignments","A function with three parameters","An operator for numbers only"],answer:1,explanation:"<code>const label = age >= 18 ? 'Adult' : 'Minor'</code>. Use for short, simple conditions. Avoid nesting ternaries — they become hard to read quickly."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What is the difference between global scope and local (function) scope?",options:["Global variables are faster; local are slower","Global variables are accessible anywhere; local variables only exist within the function or block they were declared in","Global scope is inside functions; local scope is outside","They refer to different files"],answer:1,explanation:"<code>let x = 1;</code> outside any function is global — accessible anywhere. <code>let y = 2;</code> inside a function is local — dies when the function ends."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What is an arrow function and how does it differ syntactically?",options:["Arrow functions use curly braces; regular use parentheses","Arrow functions use => and are shorter: const add = (a, b) => a + b vs function add(a,b){return a+b;}","Arrow functions can only have one parameter","Arrow functions cannot return values"],answer:1,explanation:"Arrow functions: <code>const double = n => n * 2;</code>. Single expression: <code>return</code> and braces are implicit. Parentheses around a single parameter are optional."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What does <code>Math.floor(4.9)</code> return?",options:["5","4","4.9","NaN"],answer:1,explanation:"<code>Math.floor()</code> rounds DOWN to the nearest integer regardless of decimal. <code>Math.ceil()</code> rounds up; <code>Math.round()</code> rounds to nearest."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"Why must you avoid an infinite loop and how is one accidentally created?",options:["A loop running exactly 1000 times","A loop whose condition never becomes false — e.g. while (count <= 5) without incrementing count — crashing the browser tab","A loop nested inside another loop","A loop only running on certain browsers"],answer:1,explanation:"<code>while (i < 5) { console.log(i); }</code> with no <code>i++</code> — <code>i</code> never reaches 5, condition always true, browser hangs. Always update the loop variable."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What is the difference between <code>obj.course</code> and <code>obj['course']</code>?",options:["They behave differently — one copies, one references","They are equivalent — bracket notation is required when the key is a variable or contains special characters","obj.course is deprecated","Bracket notation is slower"],answer:1,explanation:"Both access the same property. Bracket notation is essential when the key is in a variable: <code>obj[keyName]</code>. Dot notation requires a known, valid identifier name."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"How does the <code>switch</code> statement's <code>break</code> keyword work?",options:["Exits the entire program","Without break, execution falls through to the next case — break stops execution and exits the switch after a match","break restarts the switch from the first case","break skips to the default case"],answer:1,explanation:"Without <code>break</code>, JavaScript executes all subsequent cases regardless of whether they match — called fall-through. Always end each case with <code>break</code> unless fall-through is intentional."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Medium",question:"What do <code>++</code> and <code>--</code> operators do?",options:["Multiply and divide by 2","Increment (add 1) and decrement (subtract 1) a variable in place","Convert a string to a number","Check if a value is positive or negative"],answer:1,explanation:"<code>count++</code> adds 1 to <code>count</code>. <code>count--</code> subtracts 1. Equivalent to <code>count += 1</code> and <code>count -= 1</code>. Commonly used as loop counters."},
+
+{unit:"WEB104 · JS Fundamentals",difficulty:"Hard",question:"Why does <code>typeof null</code> return <code>'object'</code>?",options:["Because null is technically an empty object","It is a historical bug — null is stored with an object type tag in the original C implementation. It was never fixed to preserve backward compatibility","Because null inherits from Object","typeof was not designed to handle null"],answer:1,explanation:"In JavaScript's original C implementation, values were tagged with type bits. Null's tag matched object's. This bug was discovered early but kept to avoid breaking existing code."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Hard",question:"What is a closure and what problem does it solve?",options:["A way to close the browser","When an inner function retains access to the outer function's variables even after the outer function has returned — enables private state","A method for closing event listeners","A pattern for ending loops early"],answer:1,explanation:"Closures enable private variables: <code>function makeCounter() { let count = 0; return () => ++count; }</code>. <code>count</code> is private — only accessible through the returned function, not from outside."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Hard",question:"What is the difference between block scope (<code>let</code>/<code>const</code>) and function scope (<code>var</code>)?",options:["var is only accessible inside the block it was declared in","let/const die at the end of any {} block; var leaks out of blocks and is only bounded by function boundaries — causing the classic loop variable leaking bug","They scope identically","var is block-scoped in strict mode only"],answer:1,explanation:"<code>for (var i = 0; i < 3; i++) {}</code> — <code>i</code> still exists after the loop. <code>for (let i = 0; ...</code>) — <code>i</code> is destroyed. This <code>var</code> leakage is a common source of bugs."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Hard",question:"Predict the output: <code>console.log('a'); setTimeout(() => console.log('b'), 0); console.log('c');</code>",options:["a, b, c","b, a, c","a, c, b","c, a, b"],answer:2,explanation:"Synchronous code runs first (a, c). Even with 0ms delay, <code>setTimeout</code>'s callback goes to the task queue and runs AFTER all synchronous code completes — so b prints last."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Hard",question:"What does <code>const obj = { name: 'Alice' }; obj.name = 'Bob';</code> do — is this allowed?",options:["Throws an error — const cannot be modified","It works — const prevents reassigning the variable binding, not mutating the object's properties","Only allowed in strict mode","Silently fails and name stays 'Alice'"],answer:1,explanation:"<code>const</code> prevents reassignment of the variable itself (<code>obj = {}</code> throws). But the object it points to can still be mutated. Use <code>Object.freeze(obj)</code> to prevent mutations."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Hard",question:"What does <code>(3.14159).toFixed(2)</code> return, and what is its type?",options:["The number 3.14","The string '3.14'","314","An error — toFixed only works on integers"],answer:1,explanation:"<code>toFixed(n)</code> returns a STRING with n decimal places. <code>(3.14159).toFixed(2)</code> returns <code>'3.14'</code>. Parse with <code>Number()</code> or <code>+</code> if you need it as a number."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Hard",question:"Why does the closure counter example keep count across calls — even though the outer function has finished?",options:["Because global variables are shared","The inner function closes over the outer function's count variable — it stays alive in memory because the inner function still references it after outer() finishes","Because JavaScript caches function results","Because objects are passed by reference"],answer:1,explanation:"<code>const counter = makeCounter();</code> — <code>count</code> stays alive because <code>counter</code> (the inner function) holds a live reference to it. Each call to <code>counter()</code> increments the SAME <code>count</code>."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Hard",question:"What is the naming convention for variables, functions, and classes in JavaScript?",options:["snake_case for everything — matching Python","PascalCase for variables, snake_case for functions","camelCase for variables/functions; PascalCase for classes; UPPER_SNAKE_CASE for global constants","UPPER_CASE for all identifiers"],answer:2,explanation:"JS convention: <code>camelCase</code> for variables/functions (<code>totalScore</code>), <code>PascalCase</code> for classes (<code>BankAccount</code>), <code>UPPER_SNAKE_CASE</code> for global constants (<code>MAX_SIZE</code>)."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Hard",question:"What does the <code>!</code> (NOT) operator do and why is <code>!isLoggedIn</code> a common pattern?",options:["It is faster than isLoggedIn === false","The NOT operator flips a boolean — if isLoggedIn is false, !isLoggedIn is true. Reads naturally: 'if not logged in, redirect'","It converts the value to a string","It prevents accidental assignment"],answer:1,explanation:"<code>if (!isLoggedIn) { redirect(); }</code> reads clearly as 'if the user is not logged in'. More expressive than <code>if (isLoggedIn === false)</code>. The <code>!</code> inverts any truthy/falsy value."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Hard",question:"What is the difference between passing a value by primitive vs by reference in JavaScript?",options:["Primitives and objects behave identically","Primitives (number, string, boolean) are copied — changes inside a function don't affect the original. Objects and arrays are passed by reference — changes inside the function DO affect the original","Objects are always copied","Strings are passed by reference"],answer:1,explanation:"<code>let a = 5; fn(a);</code> — fn gets a copy, original unchanged. <code>let obj = {}; fn(obj);</code> — fn gets a reference to the same object, mutations affect the original."},
+{unit:"WEB104 · JS Fundamentals",difficulty:"Hard",question:"What is the practical difference between <code>while</code> and <code>do...while</code> — when would you specifically need <code>do...while</code>?",options:["There is no practical difference","do...while is needed when the code must run at least once regardless of the condition — e.g. prompting a user for input and then checking if it is valid","do...while only works with boolean conditions","while is faster for large loops"],answer:1,explanation:"Example: <code>do { input = prompt('Enter name:'); } while (input === '');</code> — ask at least once, keep asking only if empty. A <code>while</code> loop would require an extra prompt before the loop."},
+
+// ══ WEB105 ══
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What method adds an item to the END of an array?",options:["arr.add()","arr.append()","arr.push()","arr.insert()"],answer:2,explanation:"<code>push()</code> appends one or more items to the end and returns the new length. Opposite: <code>pop()</code> removes and returns the last item."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What method removes the LAST item from an array and returns it?",options:["arr.remove()","arr.pop()","arr.delete()","arr.shift()"],answer:1,explanation:"<code>pop()</code> removes and returns the last item. <code>shift()</code> removes from the beginning. <code>push()</code>/<code>unshift()</code> add to end/beginning."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What does <code>arr.includes('banana')</code> return?",options:["The index of 'banana'","true if 'banana' is in the array, false if not","The number of times 'banana' appears","An array of matching items"],answer:1,explanation:"<code>includes()</code> returns a boolean. For the index, use <code>indexOf()</code> which returns the position or <code>-1</code> if not found."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What does <code>document.getElementById('title')</code> return?",options:["All elements with that id","The element with the matching id, or null if not found","An array of all elements","A CSS selector string"],answer:1,explanation:"<code>getElementById</code> returns the single element with the given id (ids must be unique on the page). Returns <code>null</code> if no element has that id."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"Which method selects ALL elements matching a CSS selector?",options:["document.querySelector()","document.getElementById()","document.querySelectorAll()","document.getAll()"],answer:2,explanation:"<code>querySelectorAll()</code> returns a NodeList of all matching elements. <code>querySelector()</code> returns only the first match."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"How do you change the text content of an element?",options:["element.text = 'new'","element.textContent = 'new'","element.value = 'new'","element.content = 'new'"],answer:1,explanation:"<code>element.textContent</code> gets or sets the plain text of an element. Use <code>innerHTML</code> if you need to insert HTML tags — but be careful with user input."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What event fires when a user clicks an element?",options:["'press'","'tap'","'click'","'select'"],answer:2,explanation:"The <code>'click'</code> event fires on mousedown + mouseup. Attach a listener: <code>element.addEventListener('click', fn)</code>."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What does <code>element.classList.add('active')</code> do?",options:["Creates a new CSS class","Adds 'active' to the element's class list without removing existing classes","Replaces all classes with 'active'","Makes the element active in the DOM"],answer:1,explanation:"<code>classList.add()</code> appends a class. <code>classList.remove()</code> removes it. <code>classList.toggle()</code> adds if absent, removes if present."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What does <code>setTimeout(fn, 2000)</code> do?",options:["Runs fn every 2 seconds indefinitely","Runs fn exactly 2000 times","Runs fn once after a 2000ms delay","Pauses the page for 2 seconds"],answer:2,explanation:"<code>setTimeout</code> schedules a function to run once after the specified milliseconds. Use <code>setInterval</code> to run repeatedly. Cancel with <code>clearTimeout(id)</code>."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What is the DOM?",options:["A CSS framework","A live JavaScript tree of objects representing the HTML page — JavaScript uses it to read and modify the page","A server-side database","A JavaScript design pattern"],answer:1,explanation:"The DOM (Document Object Model) is the browser's in-memory representation of HTML as a tree of objects. JavaScript accesses and modifies elements through the DOM."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What does <code>event.target</code> refer to in an event handler?",options:["The element the listener is attached to","The specific element the user interacted with — the element that triggered the event","The parent of the clicked element","The document object"],answer:1,explanation:"<code>event.target</code> is the exact element the user clicked or typed in. The listener might be on a parent (delegation), but <code>event.target</code> points to the actual source."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What event should you listen for to intercept form submission?",options:["'click' on the submit button","'submit' on the &lt;form&gt; element","'input' on each field","'change' on the form"],answer:1,explanation:"Listen for <code>'submit'</code> on the <code>&lt;form&gt;</code> element. Call <code>event.preventDefault()</code> to stop the page reload, validate, then submit manually if valid."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What is a JavaScript Set?",options:["A sorted array","A collection where every value must be unique — adding a duplicate is silently ignored","A special type of function","A CSS selector in JavaScript"],answer:1,explanation:"<code>new Set()</code> creates a collection of unique values. Useful for removing duplicates: <code>[...new Set(arr)]</code>."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"What does <code>element.remove()</code> do?",options:["Hides the element with display:none","Deletes the element's CSS classes","Removes the element from the DOM entirely","Moves it to the end of the page"],answer:2,explanation:"<code>element.remove()</code> detaches and destroys the element from the DOM. It is gone from the page and from JavaScript's DOM tree."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Easy",question:"Which BOM property gives you the current page URL?",options:["window.path","document.url","location.href","navigator.url"],answer:2,explanation:"<code>location.href</code> returns the full current URL as a string. Setting it (<code>location.href = 'https://...'</code>) navigates to that URL."},
+
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What is the difference between <code>arr.map()</code> and <code>arr.forEach()</code>?",options:["They are identical","map() returns a new transformed array; forEach() returns undefined — use forEach for side effects, map when you need a new array","forEach() is faster","map() modifies the original array"],answer:1,explanation:"<code>map()</code> always returns a new array of the same length with each item transformed. <code>forEach()</code> runs a function for each item but returns nothing."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What does <code>arr.filter(fn)</code> return?",options:["The first item passing the test","A new array containing ONLY items where fn returns true","A boolean — true if any item passes","The original array with non-matching items set to null"],answer:1,explanation:"<code>filter()</code> returns a new (shorter or equal length) array. Never modifies the original. Example: <code>scores.filter(s => s >= 70)</code> returns only passing scores."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What is array destructuring?",options:["Deleting all items from an array","A shortcut unpacking array values into named variables: const [a, b] = arr assigns arr[0] to a and arr[1] to b","A method for sorting arrays","Converting an array to a string"],answer:1,explanation:"<code>const [first, second, ...rest] = arr</code> — much cleaner than <code>const first = arr[0]; const second = arr[1];</code>. The <code>...rest</code> collects remaining items."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What is the difference between <code>querySelector</code> and <code>getElementById</code>?",options:["They always return the same result","querySelector accepts any CSS selector and returns the first match; getElementById only accepts an id and is slightly faster for id lookups","getElementById returns all matches","querySelector is deprecated"],answer:1,explanation:"<code>getElementById('id')</code> is specifically optimised for id lookups. <code>querySelector('#id')</code> does the same but also accepts complex selectors like <code>'nav a.active'</code>."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"Why is <code>addEventListener</code> preferred over <code>element.onclick = fn</code>?",options:["addEventListener is faster","addEventListener allows multiple handlers on the same element; onclick = fn replaces any previous handler silently","onclick is deprecated","addEventListener prevents bubbling automatically"],answer:1,explanation:"Assigning to <code>onclick</code> replaces any previous handler. <code>addEventListener</code> stacks handlers — all attached listeners fire when the event occurs."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What is event bubbling and how do you stop it?",options:["Events fire twice — call event.deFire()","Events travel upward through parent elements after firing on the target — stop with event.stopPropagation()","Bubbling refers to animation speed","Bubbling fires events on child elements"],answer:1,explanation:"Clicking an inner button also fires click listeners on all parent elements up to the document. <code>event.stopPropagation()</code> prevents the event from travelling further up."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What is event delegation and why is it efficient?",options:["One listener per element for clarity","One listener on a parent handles events for all children using event.target — efficient because it uses fewer listeners and handles dynamically added elements automatically","Delegating to the server","Moving events from one element to another"],answer:1,explanation:"Instead of 100 listeners on 100 list items, one listener on the parent handles all. Children added later still bubble events to the parent — no re-attaching needed."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What is the difference between <code>textContent</code> and <code>innerHTML</code>?",options:["textContent supports HTML; innerHTML does not","textContent sets/gets plain text (safe); innerHTML parses and renders HTML tags — never set it from untrusted user input","They are identical","innerHTML is read-only"],answer:1,explanation:"<code>textContent = '&lt;b&gt;hi&lt;/b&gt;'</code> shows literal text. <code>innerHTML = '&lt;b&gt;hi&lt;/b&gt;'</code> renders bold text. Setting innerHTML from user input creates XSS vulnerabilities."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What is the difference between <code>DOMContentLoaded</code> and <code>window load</code>?",options:["DOMContentLoaded fires later — after all images","DOMContentLoaded fires when HTML is parsed (fast); window load fires after all images and resources load (slower) — use DOMContentLoaded for most JS setup","They fire at the same time","load is for JavaScript; DOMContentLoaded is for CSS"],answer:1,explanation:"Use <code>DOMContentLoaded</code> — fires as soon as the DOM is ready to query, before images and fonts load. <code>load</code> is only needed when you specifically need images ready."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What does <code>element.setAttribute('src', 'new.jpg')</code> do?",options:["Returns the current src value","Creates a new element with src","Sets the src attribute of the element to 'new.jpg'","Removes the src attribute"],answer:2,explanation:"<code>setAttribute(name, value)</code> sets any attribute on an element. For standard properties you can also use <code>element.src = 'new.jpg'</code> directly."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What does <code>document.createElement('li')</code> do and what step is still needed?",options:["Creates and adds li to the DOM automatically","Creates a new li in memory — you must still append it with appendChild() or similar","Creates a li and removes an existing one","Creates a li with default text"],answer:1,explanation:"<code>createElement</code> creates the element but does NOT add it to the page. Then set content and append: <code>item.textContent = 'text'; list.appendChild(item);</code>"},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What is object destructuring?",options:["Deleting properties from an object","Unpacking object properties into named variables by key name: const { name, age } = student","Sorting object properties","Converting an object to an array"],answer:1,explanation:"<code>const { name, age } = student</code> is equivalent to <code>const name = student.name; const age = student.age;</code>. Especially clean in function parameters."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What does <code>arr.slice(1, 3)</code> return given <code>['a','b','c','d','e']</code>?",options:["['a','b','c']","['b','c']","['b','c','d']","['a','b']"],answer:1,explanation:"<code>slice(start, end)</code> returns items from index <code>start</code> up to but NOT including <code>end</code>. Index 1 = 'b', index 2 = 'c', so result is <code>['b','c']</code>."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Medium",question:"What does <code>setInterval(fn, 1000)</code> do and how do you stop it?",options:["Runs fn once after 1 second; stops automatically","Runs fn every 1000ms indefinitely; stop it with clearInterval(id)","Runs fn exactly 1000 times","Pauses execution for 1 second"],answer:1,explanation:"<code>setInterval</code> repeats <code>fn</code> every 1000ms until stopped. Save its return value: <code>const id = setInterval(fn, 1000);</code> then call <code>clearInterval(id)</code>."},
+
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Hard",question:"Why can you NOT remove an anonymous function with <code>removeEventListener</code>?",options:["removeEventListener only works for click events","removeEventListener requires the exact same function reference — anonymous functions are new objects each time, so there is no reference to pass","Anonymous functions auto-remove after firing once","removeEventListener requires a timeout parameter"],answer:1,explanation:"<code>btn.removeEventListener('click', fn)</code> needs the EXACT function object. An anonymous <code>() => {}</code> creates a new object on every call — there is no way to reference the original."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Hard",question:"How does event delegation handle elements added to the DOM AFTER the listener is attached?",options:["It does not — new elements need their own listeners","The listener is on the parent — new children still bubble events to the parent listener, which handles them with event.target. No re-attaching needed","The browser re-runs all listeners on DOM changes","MutationObserver must be used alongside delegation"],answer:1,explanation:"This is the key power of delegation. Since the listener is on a stable parent, children added later by JavaScript still bubble their events up. No re-attaching required."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Hard",question:"What is the practical difference between <code>arr.find()</code> and <code>arr.filter()</code>?",options:["find() returns a boolean; filter() returns a number","find() returns the FIRST matching item (not an array); filter() returns ALL matching items as a new array","filter() is faster for single items","They are identical in output"],answer:1,explanation:"<code>scores.find(s => s >= 70)</code> returns <code>72</code> (first match, not an array). <code>scores.filter(s => s >= 70)</code> returns <code>[72, 88, 91]</code> (all matches in a new array)."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Hard",question:"What security risk does <code>element.innerHTML = userInput</code> create?",options:["It can slow the browser","It creates an XSS vulnerability — if user input contains &lt;script&gt; tags or event attributes, the browser executes that code","It only works in Chrome","innerHTML ignores user input"],answer:1,explanation:"If a user submits <code>&lt;img onerror='stealCookies()'&gt;</code> and you set it as innerHTML, the browser executes it. Always use <code>textContent</code> for user-supplied data."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Hard",question:"What does <code>classList.toggle('dark')</code> do and why is it useful for dark mode?",options:["Creates a CSS class called 'dark'","Adds 'dark' if absent, removes if present — a single call handles both on and off states, perfect for toggle buttons without if/else logic","Alternates between two classes every second","Switches between two stylesheets"],answer:1,explanation:"<code>toggle</code> is a one-liner for show/hide, dark/light, open/closed states. <code>document.body.classList.toggle('dark')</code> + CSS variables = dark mode in one line."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Hard",question:"Why does <code>[...new Set(arr)]</code> work to remove duplicates?",options:["Arrays and Sets share a prototype","The spread operator works on any iterable — Sets are iterable — so it expands all unique Set values into a new array literal","new Set() returns an array by default","Sets automatically convert when spread"],answer:1,explanation:"The spread operator works on any object implementing the iterator protocol. Sets are iterable, so <code>[...mySet]</code> expands all unique values into a new array — the idiomatic deduplication pattern."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Hard",question:"What is the difference between <code>setInterval</code> and a recursive <code>setTimeout</code>?",options:["They are identical","setInterval fires at a fixed interval regardless of how long the callback takes — if callback > interval, calls queue up. Recursive setTimeout waits for callback to finish before scheduling next — safer for async work","Recursive setTimeout is less accurate","setInterval is always preferred"],answer:1,explanation:"<code>setInterval(fn, 1000)</code> fires every 1000ms even if <code>fn</code> takes 1200ms — callbacks queue up. Recursive <code>setTimeout</code> inside <code>fn</code> schedules the next call only AFTER <code>fn</code> completes."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Hard",question:"How do <code>...rest</code> in destructuring and <code>...</code> spread in an array literal differ despite using the same syntax?",options:["They are different keywords that look similar","Same operator, opposite actions based on context: in destructuring (left side) ...rest COLLECTS remaining items into an array; in array literals (right side) ...spread EXPANDS an iterable into individual items","rest only works on objects; spread only on arrays","spread creates a deep copy; rest creates a shallow copy"],answer:0,explanation:"Same syntax, opposite directions: <code>const [a, ...rest] = arr</code> — rest GATHERS. <code>const newArr = [...arr, 4]</code> — spread EXPANDS. The position (left or right of =) determines which."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Hard",question:"What does <code>arr.join(', ')</code> do and how is it different from <code>arr.toString()</code>?",options:["They are identical","join() lets you specify any separator string between items; toString() uses commas with no spaces — join() gives more control over the output format","toString() returns JSON; join() returns a string","join() modifies the array; toString() does not"],answer:1,explanation:"<code>['a','b','c'].join(' - ')</code> returns <code>'a - b - c'</code>. <code>toString()</code> returns <code>'a,b,c'</code>. <code>join()</code> lets you control the separator — useful for building display strings."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Hard",question:"What is the difference between the <code>input</code> event and the <code>change</code> event on a text field?",options:["They fire at exactly the same time","input fires on every keystroke as the user types; change fires only when the user leaves the field after modifying it — use input for live feedback, change for final validation","change fires on every keystroke","input only fires on paste events"],answer:1,explanation:"<code>input</code>: fires immediately on every character typed — great for live search, character counters. <code>change</code>: fires when focus leaves the field after a change — better for email/format validation."},
+{unit:"WEB105 · DOM, Arrays & Events",difficulty:"Hard",question:"What is the difference between <code>window.innerWidth</code> and <code>screen.width</code>?",options:["They are the same value","innerWidth is the current viewport width (the browser window area); screen.width is the physical screen resolution — they differ when the browser window is not maximised","screen.width is always larger","innerWidth only works on mobile"],answer:1,explanation:"<code>window.innerWidth</code> = width of the browser viewport — what your CSS media queries respond to. <code>screen.width</code> = physical display width in pixels. For responsive JS logic, use <code>innerWidth</code>."},
+
+// ══ WEB106 ══
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What does 'synchronous' mean in JavaScript?",options:["Code that runs on a server","Code that executes one line at a time — each line must finish before the next starts","Code shared between multiple files","Code that runs on multiple threads"],answer:1,explanation:"Synchronous code is sequential and blocking — JavaScript waits for each operation to complete before moving to the next line."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What is a callback function?",options:["A function that calls itself","A function passed to another function as an argument, to be called later when something is done","A function stored in a CSS file","A function that only handles errors"],answer:1,explanation:"You have already used callbacks — <code>addEventListener('click', function() {})</code> and <code>arr.forEach(function() {})</code> — the function passed in is the callback."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What are the three states of a JavaScript Promise?",options:["Running, Paused, Stopped","Pending, Fulfilled, Rejected","Loading, Loaded, Error","Waiting, Done, Failed"],answer:1,explanation:"Every Promise starts as <strong>Pending</strong>. It settles as <strong>Fulfilled</strong> (success — resolve called) or <strong>Rejected</strong> (failure — reject called). Once settled it never changes."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What does <code>.then()</code> handle in a Promise chain?",options:["Errors and rejections","The fulfilled (success) result","Both success and failure","The pending state"],answer:1,explanation:"<code>.then(fn)</code> runs when the Promise resolves successfully. Chain <code>.catch(fn)</code> after it to handle rejections."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What does <code>.catch()</code> handle in a Promise chain?",options:["The resolved value","Successful responses only","Rejected Promises — errors and failures","Pending states"],answer:2,explanation:"<code>.catch(fn)</code> receives the rejection reason. One <code>.catch()</code> at the end of a chain catches errors from ANY <code>.then()</code> above it."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What keyword before a function makes it return a Promise automatically?",options:["promise","await","async","defer"],answer:2,explanation:"The <code>async</code> keyword makes a function always return a Promise and enables <code>await</code> to be used inside its body."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What does <code>await</code> do inside an async function?",options:["Pauses the entire browser","Pauses execution of the async function until the Promise resolves, then gives you the resolved value directly","Converts a callback into a Promise","Runs the next chained function"],answer:1,explanation:"<code>const data = await fetchData();</code> pauses only the enclosing async function until the Promise settles. The rest of the browser remains interactive."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What does <code>fetch(url)</code> return?",options:["The JSON data directly","A Promise that resolves to a Response object","A string containing HTML","An array of response headers"],answer:1,explanation:"<code>fetch()</code> returns a Promise. When it resolves, you get a Response object — not the data yet. Call <code>response.json()</code> to extract the actual data."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What HTTP method does <code>fetch(url)</code> use by default?",options:["POST","PUT","DELETE","GET"],answer:3,explanation:"<code>fetch(url)</code> defaults to GET — used for reading data. Specify other methods with an options object: <code>fetch(url, { method: 'POST' })</code>."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What does <code>response.json()</code> do?",options:["Converts response to a JS string","Parses the response body as JSON and returns a Promise resolving to the JavaScript object/array","Sends JSON data to the server","Validates whether the response is valid JSON"],answer:1,explanation:"<code>response.json()</code> reads the response body, parses it as JSON, and returns a Promise. You <code>await</code> it: <code>const data = await response.json();</code>"},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What does <code>response.ok</code> tell you?",options:["Whether the request used HTTPS","Whether the response status is 200-299 (success)","Whether the response body is empty","Whether the request was authenticated"],answer:1,explanation:"<code>response.ok</code> is <code>true</code> for 200-299 status codes and <code>false</code> for 4xx and 5xx. Always check it — <code>fetch</code> doesn't throw on HTTP errors."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What is the purpose of <code>JSON.stringify(data)</code> in a POST request?",options:["Encrypts the data","Converts a JavaScript object into a JSON string for the request body — servers expect JSON strings, not JS objects","Validates the data","Compresses the data"],answer:1,explanation:"<code>fetch</code>'s <code>body</code> option expects a string. <code>JSON.stringify()</code> converts your JS object to a JSON-formatted string. The server then parses it back."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"How do you handle errors in an async/await function?",options:["Use .catch() at the end","Wrap in try/catch — the catch block runs if any awaited Promise rejects","Use the onerror property","Errors cannot occur in async functions"],answer:1,explanation:"<code>try { const data = await fetch(url); } catch (error) { console.log(error); }</code>. The <code>catch</code> block handles both network failures and thrown errors."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What is callback hell?",options:["A JS error about too many callbacks","Deeply nested callbacks for sequential async operations — creating an unreadable indentation pyramid","A browser limit on callback count","A problem with arrow functions"],answer:1,explanation:"Each async step requiring the previous result leads to: <code>loadUser(id, fn(user) { loadPosts(user.id, fn(posts) { ... }) })</code>. Promises and async/await solve this."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Easy",question:"What is <code>Promise.all()</code> used for?",options:["To run Promises one after another","To run multiple Promises simultaneously and wait for ALL of them to complete","To retry failed Promises","To cancel running Promises"],answer:1,explanation:"<code>Promise.all([p1, p2, p3])</code> starts all at once. Resolves when the slowest finishes. Total time = slowest task, not the sum of all tasks."},
+
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"What problem does asynchronous code solve that synchronous code cannot?",options:["Synchronous tasks use more memory","Synchronous blocking tasks freeze the browser — the user cannot interact while waiting. Async code hands off slow tasks and returns immediately, keeping the page responsive","Async code is always faster","Synchronous code cannot access the DOM"],answer:1,explanation:"JavaScript is single-threaded. A 3-second synchronous data fetch would freeze everything. Async code starts the fetch, moves on, and handles the result when it arrives — page stays alive."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"What are the two arguments passed to a Promise constructor function?",options:["success and error","then and catch","resolve and reject","fulfill and deny"],answer:2,explanation:"<code>new Promise((resolve, reject) => { })</code>. Call <code>resolve(value)</code> when the operation succeeds. Call <code>reject(error)</code> when it fails."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"Why must you RETURN the next Promise inside a <code>.then()</code> chain?",options:["Without return, .then() runs twice","Without return, the next .then() receives undefined instead of the resolved value — the chain breaks silently","return is optional — it works either way","Use await inside .then() instead of return"],answer:1,explanation:"<code>.then(data => nextCall(data))</code> — without <code>return</code>, the chain doesn't wait for <code>nextCall</code>'s Promise. The next <code>.then()</code> runs immediately with <code>undefined</code>."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"Why is async/await easier to read than Promise chains for sequential tasks?",options:["async/await is faster to execute","async/await makes async code look like synchronous code — sequential steps read top-to-bottom without callbacks or .then() chains","async/await handles more error types","async/await works without Promises"],answer:1,explanation:"<code>const user = await getUser(1); const posts = await getPosts(user.id);</code> vs nested <code>.then()</code> chains. The async/await version reads exactly like normal sequential code."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"What is the two-step process for getting data from a <code>fetch()</code> call?",options:["fetch(url).data() then .parse()","Await fetch() to get Response, then await response.json() to extract the actual data","fetch(url).text() then JSON.parse()","One step — fetch returns data directly with await"],answer:1,explanation:"Step 1: <code>const response = await fetch(url);</code> — gets the Response object. Step 2: <code>const data = await response.json();</code> — reads and parses the body. Both are Promises."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"How does <code>Promise.all()</code> behave if ONE of the Promises rejects?",options:["Ignores the failure and resolves with other results","The entire Promise.all() immediately rejects — you lose results from all Promises even if most succeeded","Retries the failed Promise automatically","Only the failed Promise is returned"],answer:1,explanation:"<code>Promise.all()</code> is all-or-nothing. One failure = whole thing fails. Use <code>Promise.allSettled()</code> if you want results from all Promises regardless of individual failures."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"How do you make a POST request with <code>fetch()</code>?",options:["fetch.post(url, data)","fetch(url, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) })","fetch(url, data)","fetch(url).post(data)"],answer:1,explanation:"Pass an options object: <code>method: 'POST'</code>, <code>headers</code> declaring the content type, and <code>body: JSON.stringify(data)</code> for the payload."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"What is the output order of: <code>console.log('A'); setTimeout(() => console.log('B'), 0); console.log('C');</code>",options:["A, B, C","B, A, C","A, C, B","C, A, B"],answer:2,explanation:"Synchronous code (A, C) runs first. Even with 0ms delay, the <code>setTimeout</code> callback is placed in the task queue and only runs AFTER all synchronous code completes — so B prints last."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"What does the <code>finally</code> block do in try/catch/finally?",options:["Only runs if no error occurred","Only runs if an error occurred","Always runs — whether try succeeded or catch ran — useful for cleanup like hiding a loading spinner","Retries the try block"],answer:2,explanation:"<code>finally</code> runs unconditionally after <code>try</code> or <code>catch</code>. Classic use: show a spinner before try, hide it in finally — guaranteed to hide regardless of success or failure."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"What does the restaurant analogy illustrate about asynchronous code?",options:["Restaurants use synchronous service — one customer at a time","An async waiter takes orders and serves other tables while the kitchen cooks. A sync waiter stands waiting for each order before serving anyone else — JavaScript works like the async waiter","Asynchronous code is always multithreaded","The analogy describes database transactions"],answer:1,explanation:"The async waiter: take order → hand to kitchen → serve other tables → bring food when ready. JavaScript: start fetch → move on → handle result when arrived. The page stays alive."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"Which HTTP method would you use to UPDATE an existing record on a server?",options:["GET","POST","PUT or PATCH","DELETE"],answer:2,explanation:"<code>PUT</code> replaces an entire record. <code>PATCH</code> updates only specific fields. <code>POST</code> creates new records. <code>GET</code> reads. <code>DELETE</code> removes."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"Why must you include <code>Content-Type: application/json</code> in a POST request header?",options:["Authorization header","Content-Type: application/json tells the server the body is JSON so it knows how to parse it","Cache-Control: no-cache","Accept: text/html"],answer:1,explanation:"Without <code>Content-Type: application/json</code>, the server doesn't know the body format and may fail to parse it. The header tells the server: 'this body is JSON'."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"What is the difference between <code>Promise.all()</code>, <code>Promise.allSettled()</code>, and <code>Promise.race()</code>?",options:["They are identical","all() resolves when all succeed (fails if any fail); allSettled() waits for all regardless of success/failure; race() resolves/rejects as soon as the FIRST one settles","all() is for GET; allSettled() is for POST","race() runs Promises sequentially"],answer:1,explanation:"Use <code>all()</code> when you need every Promise to succeed. <code>allSettled()</code> for all results even if some fail. <code>race()</code> for timeouts or 'whichever finishes first' scenarios."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Medium",question:"How do you display fetched data on the page after a successful fetch?",options:["Return the data from the async function — the browser renders it","Inside the try block after awaiting response.json(), use DOM methods (createElement, textContent, appendChild) to build and insert elements with the data","The fetch API automatically updates the DOM","Use document.write(data) to inject the content"],answer:1,explanation:"Fetch gets the data. You then build elements: <code>const card = document.createElement('div'); card.textContent = user.name; list.appendChild(card);</code>"},
+
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Hard",question:"Why does <code>fetch()</code> NOT reject on a 404 response, and how do you handle it correctly?",options:["fetch() does throw on 404","fetch() only rejects on network failure (no internet, DNS error). HTTP errors like 404 still resolve. You must check: if (!response.ok) throw new Error('HTTP ' + response.status)","404 responses are handled by .catch() automatically","response.ok is always true for any received response"],answer:1,explanation:"A 404 is a valid HTTP response — the server replied, just with 'not found'. <code>fetch()</code> only rejects when it cannot reach the server at all. Always guard with <code>if (!response.ok)</code>."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Hard",question:"What happens when you use <code>await</code> outside of an <code>async</code> function?",options:["Works fine in modern JavaScript","Throws a SyntaxError — await is only valid inside async functions (except at the top level of ES modules)","Converts the expression to a value synchronously","Creates a new async context automatically"],answer:1,explanation:"<code>await</code> is only valid inside <code>async</code> functions or at the top level of ES modules. Using it elsewhere is a SyntaxError. Always wrap async/await code in an <code>async</code> function."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Hard",question:"How does an <code>async</code> function's return value differ from a regular function's?",options:["async functions cannot return values","An async function always returns a Promise — even returning a plain value wraps it in Promise.resolve(value). You must await or .then() to get the value","async functions return undefined always","The return value is only accessible inside the function"],answer:1,explanation:"<code>async function greet() { return 'Hi'; }</code> — <code>greet()</code> returns <code>Promise { 'Hi' }</code>. You must <code>await greet()</code> or <code>greet().then(v => ...)</code> to get the string."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Hard",question:"You want a loading spinner visible while fetching, hidden whether fetch succeeds or fails. What is the correct pattern?",options:["Show spinner in try, hide in both then and catch separately","Show spinner before try block, hide it in finally — finally always runs regardless of success or failure","Use two separate fetch calls","Set a timeout to hide the spinner after 3 seconds"],answer:1,explanation:"<code>showSpinner(); try { data = await fetch(url); render(data); } catch (e) { showError(e); } finally { hideSpinner(); }</code>. <code>finally</code> is exactly designed for guaranteed cleanup."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Hard",question:"What is the JavaScript event loop and how does it relate to async behaviour?",options:["A browser feature running JS on multiple threads","JavaScript is single-threaded. The event loop checks the call stack — when empty, it picks the next task from the task queue (setTimeout callbacks, resolved Promises) and pushes it to the stack","The event loop schedules DOM updates","The event loop converts sync code to async"],answer:1,explanation:"JS runs one thing at a time. Async callbacks go to the task queue. The event loop only moves them to the call stack when the stack is empty — after all synchronous code finishes. Hence 'A, C, B'."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Hard",question:"Why is <code>Promise.all()</code> faster than sequential <code>await</code> calls?",options:["Promise.all() uses multiple CPU threads","Sequential await pauses at each line — total time = sum of all task durations. Promise.all() starts all tasks simultaneously — total time = slowest task only","Promise.all() caches results","Sequential await blocks the event loop"],answer:1,explanation:"<code>const a = await t1(); const b = await t2();</code> — 1000ms + 800ms = 1800ms total. <code>Promise.all([t1(), t2()])</code> — both run concurrently, total = 1000ms (the slower one)."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Hard",question:"Compare callback, Promise, and async/await approaches to sequential async tasks.",options:["They are all equally readable","Callbacks: deeply nested, inconsistent error handling per level. Promises: flat chain but verbose .then(), one .catch() at end. Async/await: reads like sync code, try/catch is natural — the modern industry standard","Promises are hardest to read","Callbacks are the modern standard"],answer:1,explanation:"This evolution solved real problems: callbacks → nesting hell. Promises → flat but .then() verbose. Async/await → reads like synchronous code. Use async/await for all new code; understand all three to read any codebase."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Hard",question:"What does <code>response.status</code> contain and when would you use it instead of <code>response.ok</code>?",options:["The response body length","The HTTP status code number (e.g. 200, 404, 500) — use it when you need to handle different errors differently, e.g. 401 (redirect to login) vs 404 (show not found) vs 500 (show server error)","Whether the response is cached","The response content type"],answer:1,explanation:"<code>response.ok</code> is a boolean for 2xx. <code>response.status</code> gives the exact code — useful when you need to differentiate: a 401 should redirect to login, a 404 show 'not found', a 500 show 'try again later'."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Hard",question:"Why is it important to call <code>event.preventDefault()</code> in a form submit handler before doing a fetch?",options:["It makes the fetch faster","Without it, the browser immediately navigates to the form's action URL and reloads the page — destroying your JavaScript context before the fetch can complete","It validates form fields automatically","It prevents the fetch from running twice"],answer:1,explanation:"The default form submit causes a full page reload. <code>event.preventDefault()</code> stops that navigation, keeping your JavaScript running so you can validate and fetch manually."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Hard",question:"What would happen if you forgot <code>await</code> before <code>response.json()</code>?",options:["The code still works identically","data would be a pending Promise object, not the actual data — any access like data.name would be undefined. This is a very common async/await mistake","JavaScript automatically awaits it","It throws a SyntaxError"],answer:1,explanation:"Without <code>await</code>, you get a Promise object assigned to <code>data</code>. <code>data.name</code> would be <code>undefined</code>. Always <code>await</code> both the <code>fetch()</code> and the <code>.json()</code> call."},
+{unit:"WEB106 · Async JS & Fetch",difficulty:"Hard",question:"What is the purpose of a simulated delay with <code>setTimeout</code> inside a Promise constructor when learning async?",options:["It makes the code production-ready","It simulates a real server delay (network latency) without needing an actual API — so you can practice async patterns before connecting to real data sources","It speeds up testing","setTimeout inside a Promise resolves instantly"],answer:1,explanation:"<code>new Promise(resolve => setTimeout(() => resolve(data), 1500))</code> mimics a 1.5s server response. This lets you learn callbacks, Promises, and async/await patterns without needing a real API."},
+
+// ══ WEB107 ══
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What does OOP stand for?",options:["Online Object Platform","Object-Oriented Programming","Optional Output Parameters","Ordered Object Protocol"],answer:1,explanation:"OOP stands for Object-Oriented Programming — structuring code around objects that bundle related data (properties) and behaviour (methods)."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What keyword defines a class in JavaScript?",options:["object","struct","class","type"],answer:2,explanation:"<code>class MyClass { }</code> defines a blueprint. By convention, class names start with an uppercase letter."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What keyword creates an instance (object) from a class?",options:["create","make","build","new"],answer:3,explanation:"<code>const alice = new Student('Alice', 85);</code> — <code>new</code> calls the constructor and returns a new object built from the class blueprint."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What special method runs automatically when a new instance is created?",options:["init()","setup()","constructor()","create()"],answer:2,explanation:"The <code>constructor()</code> method is called automatically by <code>new ClassName()</code>. It receives arguments and sets up the initial properties using <code>this</code>."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"Inside a class method, what does <code>this</code> refer to?",options:["The class itself","The specific object instance currently being used","The parent class","The global window object"],answer:1,explanation:"<code>this</code> is always the current instance. When <code>alice.greet()</code> runs, <code>this</code> is <code>alice</code>. When <code>bob.greet()</code> runs, <code>this</code> is <code>bob</code>."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What is a class property?",options:["A method belonging to the class","Data stored on an object — like name, age, or grade","A static method","A CSS class associated with the object"],answer:1,explanation:"Properties are data values stored on an instance: <code>this.name = name;</code>. Methods are functions. Together they define what an object IS and what it can DO."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What is an instance in OOP?",options:["The class definition itself","A real object created from a class blueprint using the new keyword","A method inside a class","A static property"],answer:1,explanation:"A class is the blueprint; an instance is the actual object. <code>class Car { }</code> is the blueprint. <code>const myCar = new Car('Toyota')</code> is an instance."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What is a method in OOP?",options:["A variable stored on an object","A function defined inside a class — describing what an object can do","A way to create instances","An inherited property"],answer:1,explanation:"Methods are functions that belong to a class. Called on instances: <code>alice.describe()</code> invokes the <code>describe()</code> method defined in the class."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What keyword makes one class inherit from another?",options:["inherits","extends","include","import"],answer:1,explanation:"<code>class Dog extends Animal</code> makes <code>Dog</code> a child of <code>Animal</code>. Dog instances automatically get all of Animal's properties and methods."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What does <code>super()</code> call in a child class constructor?",options:["A static method on the child","The parent class's constructor — setting up inherited properties","The most recently defined method","The global Object constructor"],answer:1,explanation:"<code>super(name, age)</code> calls the parent class's <code>constructor(name, age)</code>. It sets up parent properties first, then you add the child's own."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What does <code>instanceof</code> check?",options:["Whether a class has been defined","Whether an object was created from a specific class (or its parent)","Whether two objects are identical","Whether a method exists on an object"],answer:1,explanation:"<code>rex instanceof Dog</code> returns <code>true</code> if <code>rex</code> was created with <code>new Dog()</code>. Also returns <code>true</code> for parent classes in the chain."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What is a getter in a class?",options:["A method for setting property values","A method with the get keyword — accessed like a property (no parentheses) that computes a value on demand","A static property","A constructor parameter"],answer:1,explanation:"<code>get letterGrade() { return this._grade >= 70 ? 'A' : 'B'; }</code> — used as <code>alice.letterGrade</code> not <code>alice.letterGrade()</code>."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What is a setter in a class?",options:["A method that reads a property","A method with the set keyword that runs when you assign a value — used to validate before storing","A static method","A class that configures other classes"],answer:1,explanation:"<code>set grade(value) { if (value > 100) return; this._grade = value; }</code> — called as <code>alice.grade = 95</code>. Runs validation before storing."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What is method overriding?",options:["Calling a method too many times","A child class defining a method with the same name as the parent — the child's version replaces the parent's","Removing a method from the parent","Calling two methods simultaneously"],answer:1,explanation:"If both <code>Animal</code> and <code>Dog</code> define <code>speak()</code>, calling <code>dog.speak()</code> uses Dog's version. The child's method shadows the parent's."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Easy",question:"What naming convention should class names follow?",options:["camelCase like variables","UPPER_CASE like constants","PascalCase — first letter of each word capitalised","snake_case with underscores"],answer:2,explanation:"Classes use PascalCase: <code>BankAccount</code>, <code>ShoppingCart</code>. This visually distinguishes classes from variables and functions which use camelCase."},
+
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"What is the difference between a class and an instance?",options:["A class stores data; an instance stores methods","A class is the blueprint written once; an instance is a real object created from it — you write one class but create many instances with their own data","They are the same thing","Only one instance can be created per class"],answer:1,explanation:"<code>class Student { }</code> is the blueprint. <code>const alice = new Student('Alice', 85)</code> and <code>const bob = new Student('Bob', 72)</code> are two instances — same methods, own data."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"Why use a constructor with <code>this.name = name</code> rather than hardcoding values?",options:["To make the class longer","Each instance stores its OWN data — without parameters and this, every Student would share the same hardcoded name","this is required by JavaScript syntax","Hardcoding is not allowed in classes"],answer:1,explanation:"The constructor receives different arguments per instance: <code>new Student('Alice', 85)</code> vs <code>new Student('Bob', 72)</code>. <code>this.name = name</code> stores the right name on each independently."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"What is the difference between a regular method and a static method?",options:["Regular methods are faster","Regular methods are called on instances (alice.describe()); static methods are called on the class (Student.passMark()) and cannot access instance data via this","Static methods are inherited; regular ones are not","Regular methods use the class keyword"],answer:1,explanation:"<code>alice.describe()</code> uses <code>this</code> to access Alice's data. <code>Student.passMark()</code> — no instance data. Static methods are class-level utilities."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"What is the difference between a getter and a regular method?",options:["Getters are faster","A getter is accessed like a property (no parentheses) — preferred for computed values that feel like properties e.g. alice.letterGrade rather than alice.getLetterGrade()","Getters cannot access instance properties","Regular methods can have multiple parameters; getters cannot — that is the only difference"],answer:1,explanation:"Getters provide a cleaner API. <code>alice.average</code> reads more naturally than <code>alice.getAverage()</code> when the value feels like a property of the object."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"Why must <code>super()</code> be the FIRST line in a child constructor?",options:["JavaScript convention only","super() sets up the parent portion of the object — using this before super() throws ReferenceError because the object is not fully initialised yet","super() overrides parent properties","super() is only needed sometimes"],answer:1,explanation:"Until <code>super()</code> runs, the instance (<code>this</code>) doesn't exist yet. Using <code>this</code> before it throws: <code>ReferenceError: Must call super before accessing 'this'</code>."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"What is the purpose of a setter with validation?",options:["To prevent the property from being read","To control how properties are updated — running validation before storing, preventing invalid data from entering the object","To make the property static","Setters notify other properties of changes"],answer:1,explanation:"Without a setter, anyone could do <code>alice.grade = 9999</code>. With a setter: <code>if (v < 0 || v > 100) return; this._grade = v;</code> — invalid values are rejected."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"How do you call the parent's version of an overridden method from within the child class?",options:["parent.methodName()","this.parent.methodName()","super.methodName()","base.methodName()"],answer:2,explanation:"<code>super.describe()</code> calls the parent class's <code>describe()</code>. Useful when overriding — run the parent's version first, then add child-specific behaviour."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"Why does the Student's <code>average</code> use a getter instead of a stored property?",options:["Getters are required in child classes","Grades are added after construction — a stored value would be wrong. The getter recalculates from this._grades every time it is accessed — always reflects current grades","Getters are more memory-efficient","The constructor cannot access this._grades"],answer:1,explanation:"If <code>average</code> were stored in the constructor, it would be 0 forever since grades are added later with <code>addGrade()</code>. A getter recomputes from the live array on every access."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"What does <code>rex instanceof Animal</code> return if <code>Dog extends Animal</code>?",options:["false — rex is a Dog, not an Animal","true — a child instance is also an instance of all parent classes in the chain","An error — instanceof only checks the direct class","Depends on whether rex uses super()"],answer:1,explanation:"Inheritance establishes an 'is-a' relationship. Rex IS a Dog AND IS an Animal. <code>instanceof</code> checks the entire prototype chain — both are <code>true</code>."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"What problem does OOP solve over procedural (scattered) code?",options:["OOP makes code faster","OOP groups related data and behaviour into self-contained objects — instead of scattered variables and functions, everything about a Student lives in one Student class","OOP is required for JavaScript","OOP eliminates functions"],answer:1,explanation:"Without OOP: <code>let student1Name, student1Grade, function printGrade(name)</code> — scattered everywhere. With OOP: <code>class Student { name; grade; describe() }</code> — organised in one place."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"How does the Teacher's <code>grade(student, subject, score)</code> method work?",options:["It directly mutates the student's private variable","It calls student.addGrade(subject, score) — one class calling a method on an instance of another class, demonstrating object interaction","It stores the grade on the Teacher object","It uses static methods to update grades"],answer:1,explanation:"<code>grade(student, subject, score) { student.addGrade(subject, score); }</code> — a Teacher method accepts a Student instance and calls its method. This is objects interacting — a key OOP pattern."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"Why use an underscore for <code>this._grade</code> when a getter/setter is defined?",options:["Underscores make properties truly private","Convention signalling 'use the getter/setter, not this raw property directly' — and avoids infinite recursion if getter/setter used the same name as the stored value","Underscores improve performance","Required syntax for getters and setters"],answer:1,explanation:"If getter is named <code>grade</code> and stores to <code>this.grade</code>, reading <code>this.grade</code> inside the getter would call itself — infinite recursion. <code>this._grade</code> is the raw storage, separate from the getter name."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"Can a child class add properties that the parent class does not have?",options:["No — child classes must match the parent's properties","Yes — the child constructor calls super() for parent properties then assigns its own additional properties using this","Only if the parent is declared extendable","Only static properties can be added"],answer:1,explanation:"<code>class Dog extends Animal { constructor(name, breed) { super(name); this.breed = breed; } }</code> — <code>breed</code> exists only on Dog. Dogs have everything Animals have, plus their own."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Medium",question:"What are the four key terms introduced in OOP: Class, Instance, Property, Method?",options:["Template, Copy, Variable, Loop","Class (blueprint), Instance (real object from blueprint), Property (data on object), Method (function on object)","Package, Module, Attribute, Function","Type, Object, Field, Procedure"],answer:1,explanation:"Class = blueprint. Instance = real object from that blueprint with <code>new</code>. Property = data stored on the object (name, grade). Method = function stored on the object (describe(), hasPassed())."},
+
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Hard",question:"What is the prototype chain and how do JavaScript classes relate to it?",options:["A chain of if/else inside a class","JavaScript classes are syntactic sugar over prototypal inheritance — when you access a method, JS looks at the instance, then its prototype (the class), then the parent's prototype — walking the chain until found or undefined","Prototype chains are separate from classes","Classes override the prototype chain completely"],answer:1,explanation:"Under the hood, <code>class</code> creates prototype objects. <code>dog.eat()</code> — not on dog? Check Dog.prototype. Not there? Check Animal.prototype. This lookup chain is the prototype chain."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Hard",question:"Why is calling a static method on an instance (<code>alice.passMark()</code>) bad practice?",options:["It causes a runtime error always","Static methods don't belong to instances — they belong to the class. alice.passMark() implies the method uses Alice's data, but it doesn't — Student.passMark() correctly signals it's a class-level utility","JavaScript allows it but runs slower","Static methods return undefined on instances"],answer:1,explanation:"Static methods are class-level utilities. <code>Student.isValidGrade(85)</code> is about grades in general. <code>alice.isValidGrade(85)</code> falsely implies it's about Alice specifically."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Hard",question:"What happens if you call <code>alice.passMark()</code> where <code>passMark</code> is a static method?",options:["It works — static methods are accessible from instances","Throws TypeError: alice.passMark is not a function — static methods only exist on the class constructor, not on instances","Returns undefined","Calls the parent class's passMark instead"],answer:1,explanation:"Static methods are on the class object, not instance objects. <code>alice.passMark</code> is <code>undefined</code>, so calling it throws <code>TypeError: alice.passMark is not a function</code>."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Hard",question:"Why does <code>super.describe()</code> in Dog's override avoid code duplication?",options:["To avoid a method name conflict","It reuses the parent's implementation — if Animal's describe() is ever updated, Dog benefits automatically. Copy-pasting it creates maintenance debt: two places to update if anything changes","super.describe() is required syntax","It runs the parent's method asynchronously"],answer:1,explanation:"DRY (Don't Repeat Yourself): <code>super.describe()</code> calls the parent's tested code. If you copy-paste Animal's logic into Dog, any future bug fix in Animal must also be applied in Dog — a maintenance problem."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Hard",question:"How does JavaScript know which version of <code>introduce()</code> to call when Student and Teacher both override it from Person?",options:["It always calls Person's version","JavaScript checks the actual type of the instance at runtime — if it's a Student, Student's introduce() is found first in the prototype chain; if Teacher, Teacher's version is used. This is runtime polymorphism","It calls both versions sequentially","It calls whichever was defined last in the file"],answer:1,explanation:"Method resolution checks the instance's prototype first. <code>alice.introduce()</code> finds Student's version first in the chain. <code>drPeters.introduce()</code> finds Teacher's. Same message, different behaviour based on type — polymorphism."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Hard",question:"What is the difference between <code>Object.freeze(obj)</code> and using <code>const</code> for an object?",options:["They achieve the same result","const prevents reassigning the variable binding — the object can still be mutated. Object.freeze() prevents ANY mutation of the object's properties — you cannot add, remove, or change them","Object.freeze() also prevents reassignment","const only works for primitives"],answer:1,explanation:"<code>const obj = {}; obj.name = 'x';</code> — works, const only blocks <code>obj = something_else</code>. <code>Object.freeze(obj); obj.name = 'x';</code> — silently fails (or throws in strict mode)."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Hard",question:"What does the <code>reduce()</code> in the Student's <code>average</code> getter do?",options:["Removes low grades","reduce() accumulates all grade scores into a single total by running (sum + g.score) for each grade object — the result is divided by grades.length to get the average","Sorts the grades array","Filters out zero grades"],answer:1,explanation:"<code>this._grades.reduce((sum, g) => sum + g.score, 0)</code> starts at 0 and adds each grade's score to the running total. Dividing by <code>_grades.length</code> gives the mean average."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Hard",question:"Why do too many global variables cause problems, and how does OOP address this?",options:["Global variables cause CSS conflicts","Globals can be mutated from anywhere — when something goes wrong, any part of the codebase could be the culprit. OOP encapsulates data inside objects — only the object's own methods access its properties","Globals use more memory","OOP makes all variables global through this"],answer:1,explanation:"With globals: <code>student1Grade = 'banana'</code> could happen anywhere in 10,000 lines. With OOP, <code>_grade</code> is only touched by Student methods — bugs are contained to the Student class."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Hard",question:"Can a class have multiple constructors in JavaScript?",options:["Yes — overloaded constructors like Java","No — exactly ONE constructor is allowed. Having two is a SyntaxError. Handle flexible initialisation with default parameters inside the single constructor","Yes — the last constructor defined wins","Yes — one for each parent class"],answer:1,explanation:"Unlike Java/C++, JavaScript allows only one <code>constructor()</code>. Having two is a SyntaxError. Use defaults: <code>constructor(name, grade = 0) {}</code> to handle optional arguments."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Hard",question:"What does <code>class Student extends Person</code> actually establish?",options:["Student copies Person's methods at definition time","Student is a specialisation of Person — every Student IS a Person with additional properties and methods. The prototype chain links them: Student.prototype inherits from Person.prototype","Person inherits from Student","They share methods but not properties"],answer:1,explanation:"This is the 'is-a' relationship. A Student IS a Person (has name, age, introduce()) plus additions (studentId, addGrade(), report()). <code>alice instanceof Person</code> is <code>true</code> because of this link."},
+{unit:"WEB107 · OOP in JavaScript",difficulty:"Hard",question:"Why is OOP described as 'organising code around objects' rather than 'a list of instructions'?",options:["OOP removes the need for logic","Procedural code is a sequence of steps — as programs grow, this becomes an unmanageable tangle of functions and globals. OOP bundles state (properties) with behaviour (methods) into cohesive units — easier to reason about, test, and extend independently","OOP is the only way to write JS","OOP removes the need for variables"],answer:1,explanation:"A <code>Student</code> object knows its own name, grades, and how to calculate its average. It is a self-contained unit. Compare to 10 scattered functions that all accept a student object as a parameter — OOP is simply better organised at scale."},
+
+];
